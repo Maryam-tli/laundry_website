@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'laundry_app',  # Custom app for laundry management
+    'blog_app',  # Custom app for blog management
 ]
 
 MIDDLEWARE = [
