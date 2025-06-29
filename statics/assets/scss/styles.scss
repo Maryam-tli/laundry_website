@@ -1,0 +1,558 @@
+
+// Adding light and dark variables
+:root {
+    --bs-scrollbar-thumb-bg: #{to-rgb($gray-300), 1};
+    --bs-scrollbar-track-bg: #{to-rgb($gray-100), 1};
+
+    // Opacity of the patten-boxes 
+    --bs-patten-boxes-opacity: 1;
+}
+
+// For toggler icon
+@include color-mode(dark) {
+    // CSS variable overrides here...
+    --bs-scrollbar-thumb-bg: #{to-rgb($gray-500), 0.5};
+    --bs-scrollbar-track-bg: #{to-rgb($gray-500), 0.16};
+
+    // --bs-primary: #{$indigo-400};
+    //   --bs-primary: $indigo-500;
+    // --bs-primary-rgb: #{to-rgb($indigo-400)};
+
+    // Opacity of the patten-boxes 
+    --bs-patten-boxes-opacity: 0.15;
+
+
+    .toggler-icon {
+        background-color: $gray-0;
+    }
+
+    /* Color of Toggler when collapsed */
+    .navbar-toggler.collapsed .toggler-icon {
+        background-color: $gray-0;
+    }
+}
+
+/* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(var(--bs-scrollbar-thumb-bg)) rgba(var(--bs-scrollbar-track-bg));
+}
+  
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    background-color: initial;
+    width: 0.375rem !important;
+    height: 0.375rem !important;
+}
+
+
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(var(--bs-scrollbar-thumb-bg));
+    border-radius: 0.25rem;
+    // border: 2px solid transparent;
+    // background-clip: content-box;
+}
+
+  
+*::-webkit-scrollbar-track {
+    background-color: rgba(var(--bs-scrollbar-track-bg));
+    border-radius: 0.25rem;
+}
+
+/*
+    // aditional, you may need this later!!!
+    *::-webkit-scrollbar-track:horizontal {
+        background-color: rgba($body-color, 0.5);
+    }
+*/ 
+
+
+
+
+// #-#-#-#-# Dropdown on hover
+@media (min-width: 992px) {
+    .dropdown:hover > .dropdown-menu-hover {
+        display: block;
+        top: 100%;
+        margin-top: var(--bs-dropdown-spacer);
+    }
+}
+
+// #-#-#-#-# hamburger helper
+
+/* Remove border from toggler */
+.navbar-toggler {
+    border: 0 !important;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
+}
+
+/* Lines of the Toggler */
+.toggler-icon {
+    width: 30px;
+    height: 3px;
+    background-color: var(--bs-body-color);
+    display: block;
+    transition: all 0.2s;
+}
+
+/* Adds Space between the lines */
+.middle-bar {
+    margin: 5px auto;
+}
+
+/* State when navbar is opened (START) */
+.navbar-toggler .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+}
+
+.navbar-toggler .middle-bar {
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.navbar-toggler .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+}
+/* State when navbar is opened (END) */
+
+/* State when navbar is collapsed (START) */
+.navbar-toggler.collapsed .top-bar {
+    transform: rotate(0);
+}
+
+.navbar-toggler.collapsed .middle-bar {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.navbar-toggler.collapsed .bottom-bar {
+    transform: rotate(0);
+}
+/* State when navbar is collapsed (END) */
+
+/* Color of Toggler when collapsed */
+.navbar-toggler.collapsed .toggler-icon {
+    background-color: var(--bs-body-color);
+}
+
+
+
+// #-#-#-#-# Social button
+.social {
+    text-transform: uppercase !important;
+    font-weight: bold !important;
+    font-size: 12px !important;
+}
+
+.twitter {
+    background: #1DA1F2 !important;
+    color: $white !important;
+}
+
+.instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
+    color: $white !important;
+}
+
+.facebook {
+    background: #4267B2 !important;
+    color: $white !important;
+}
+
+.linkedin {
+    background: #0A66C2 !important;
+    color: $white !important;
+}
+
+.github {
+    background: #333 !important;
+    color: $white !important;
+}
+
+.youtube {
+    background: #FF0000 !important;
+    color: $white !important;
+}
+
+.apple {
+    background: $black !important;
+    color: $white !important;
+}
+
+.android {
+    background: $black !important;
+    color: $white !important;
+}
+
+.behance {
+    background: #053EFF !important;
+    color: $white !important;
+}
+
+.pinterest {
+    background: #E60023 !important;
+    color: $white !important;
+}
+
+.vimeo {
+    background: #1ab7ea !important;
+    color: $white !important;
+}
+
+.slack {
+    background: #4A154B !important;
+    color: $white !important;
+}
+
+.dribbble {
+    background: #EA4C89 !important;
+    color: $white !important;
+}
+
+.reddit {
+    background: #FF4500 !important;
+    color: $white !important;
+}
+
+.snapchat {
+    background: #FFFC00 !important;
+    color: $black !important;
+}
+
+.whatsapp {
+    background: #25D366 !important;
+    color: $white !important;
+}
+
+.telegram {
+    background: #0088cc !important;
+    color: $white !important;
+}
+
+.google {
+    background: #4285F4 !important;
+    color: $white !important;
+}
+
+.skype {
+    background: #00aff0 !important;
+    color: $white !important;
+}
+
+.quora {
+    background: #B92B27 !important;
+    color: $white !important;
+}
+
+.paypal {
+    background: #0070BA !important;
+    color: $white !important;
+}
+
+.medium {
+    background: $black !important;
+    color: $white !important;
+}
+
+.signal {
+    background: #3a76f0  !important;
+    color: $white !important;
+}
+
+.messenger {
+    background: linear-gradient(120deg,#A334FA, #0695FF) !important;
+    color: $white !important;
+}
+
+.discord {
+    background: #7289DA !important;
+    color: $white !important;
+}
+
+.stack-overflow {
+    background: #f48024 !important;
+    color: $white !important;
+}
+
+.spotify {
+    background: #1DB954 !important;
+    color: $white !important;
+}
+
+.tiktok {
+    background: #25F4EE !important;
+    color: $black !important;
+}
+
+.meta {
+    background: #1877F2 !important;
+    color: $white !important;
+}
+
+.twitter:hover,
+.instagram:hover,
+.facebook:hover,
+.linkedin:hover,
+.github:hover,
+.youtube:hover,
+.apple:hover,
+.android:hover,
+.behance:hover,
+.pinterest:hover,
+.vimeo:hover,
+.slack:hover,
+.dribbble:hover,
+.reddit:hover,
+.snapchat:hover,
+.whatsapp:hover,
+.telegram:hover,
+.google:hover,
+.skype:hover,
+.quora:hover,
+.paypal:hover,
+.medium:hover,
+.signal:hover,
+.messenger:hover,
+.discord:hover,
+.stack-overflow:hover,
+.spotify:hover,
+.tiktok:hover,
+.meta:hover
+{
+	filter: brightness(95%) !important;
+}
+
+
+
+
+// This style is inspired by tailwindcss
+// Typography: Font Size        -start
+.text-xs {
+    @include rfs(0.75rem, font-size);
+    line-height: 1rem;
+}
+.text-sm {
+    @include rfs(0.875rem, font-size);
+    line-height: 1.25rem;
+}
+.text-base   {
+    @include rfs(1rem, font-size);
+    line-height: 1.5rem;
+}
+.text-lg {
+    @include rfs(1.125rem, font-size);
+    line-height: 1.75rem;
+}
+.text-xl {
+    @include rfs(1.25rem, font-size);
+    line-height: 1.75rem;
+}
+.text-2xl    {
+    @include rfs(1.5rem, font-size);
+    line-height: 2rem;
+}
+.text-3xl    {
+    @include rfs(1.875rem, font-size);
+    line-height: 2.25rem;
+}
+.text-4xl    {
+    @include rfs(2.25rem, font-size);
+    line-height: 2.5rem;
+}
+.text-5xl    {
+    @include rfs(3rem, font-size);
+    line-height: 1;
+}
+.text-6xl    {
+    @include rfs(3.75rem, font-size);
+    line-height: 1;
+}
+.text-7xl    {
+    @include rfs(4.5rem, font-size);
+    line-height: 1;
+}
+.text-8xl    {
+    @include rfs(6rem, font-size);
+    line-height: 1;
+}
+.text-9xl    {
+    @include rfs(8rem, font-size);
+    line-height: 1;
+}
+// Typography: Font Size        -end
+
+
+// Typography Line Height       -start
+.leading-3   {
+    line-height: .75rem;
+}
+.leading-4   {
+    line-height: 1rem;
+}
+.leading-5   {
+    line-height: 1.25rem;
+}
+.leading-6   {
+    line-height: 1.5rem;
+}
+.leading-7   {
+    line-height: 1.75rem;
+}
+.leading-8   {
+    line-height: 2rem;
+}
+.leading-9   {
+    line-height: 2.25rem;
+}
+.leading-10  {
+    line-height: 2.5rem;
+}
+.leading-none    {
+    line-height: 1;
+}
+.leading-tight   {
+    line-height: 1.25;
+}
+.leading-snug    {
+    line-height: 1.375;
+}
+.leading-normal  {
+    line-height: 1.5;
+}
+.leading-relaxed {
+    line-height: 1.625;
+}
+.leading-loose {
+    line-height: 2;
+}
+// Typography Line Height       -end
+
+
+
+// letter-spacing    -start
+.tracking-tighter {
+    letter-spacing: -0.05em;
+}
+.tracking-tight {
+    letter-spacing: -0.025em;
+}
+.tracking-normal {
+    letter-spacing: 0em;
+}
+.tracking-wide {
+    letter-spacing: 0.025em;
+}
+.tracking-wider {
+    letter-spacing: 0.05em;
+}
+.tracking-widest {
+    letter-spacing: 0.1em;
+}
+// letter-spacing    -end
+
+
+
+// Typography : Font Weight     -start
+.fw-thin {
+    font-weight: 100;
+}
+.fw-extralight {
+    font-weight: 200;
+}
+.fw-extrabold {
+    font-weight: 800;
+}
+.fw-black {
+    font-weight: 900;
+}
+// Typography : Font Weight     -end
+
+
+
+
+
+//  Sizing : Max-Width       -start
+.max-w-xs {
+    max-width: 20rem;
+}
+.max-w-sm {
+    max-width: 24rem;
+}
+.max-w-md {
+    max-width: 28rem;
+}
+.max-w-lg {
+    max-width: 32rem;
+}
+.max-w-xl {
+    max-width: 36rem;
+}
+.max-w-2xl {
+    max-width: 42rem;
+}
+.max-w-3xl {
+    max-width: 48rem;
+}
+.max-w-4xl {
+    max-width: 56rem;
+}
+.max-w-5xl {
+    max-width: 64rem;
+}
+.max-w-6xl {
+    max-width: 72rem;
+}
+.max-w-7xl {
+    max-width: 80rem;
+}
+//  Sizing : Max-Width       -end
+
+
+
+/* Carret dropdown  */
+.carret-dropdown-path {
+    stroke: var(--bs-dropdown-border-color);
+    stroke-width: 1px;
+    stroke-dasharray: 12.6;
+    stroke-dashoffset: 4.6;
+    stroke-linejoin: round;
+}
+
+/* Dropdown check */
+.active .active-check {
+    display: inline-block !important;
+}
+
+
+//  Display only the first 1 line
+.line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+//  Display only the first 2 lines
+.line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+//  Display only the first 3 lines
+.line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}

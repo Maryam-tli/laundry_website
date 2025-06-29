@@ -1,0 +1,98 @@
+@import "./node_modules/bootstrap/scss/functions";
+@import "./node_modules/bootstrap/scss/variables";
+@import "./node_modules/bootstrap/scss/maps";
+@import "./node_modules/bootstrap/scss/mixins";
+@import "./node_modules/bootstrap/scss/utilities";
+
+$utilities: map-merge(
+  $utilities,
+  (
+    
+    // Adding hover $utilities-text-colors
+    "color": map-merge(
+      map-get($utilities, "color"),
+      (
+        state: hover,
+      )
+    ),
+
+     // Adding hover for $utilities-text-emphasis-colors
+     "text-color": map-merge(
+      map-get($utilities, "text-color"),
+      (
+        state: hover,
+      )
+    ),
+
+    // Adding hover for background-color
+    "background-color": map-merge(
+      map-get($utilities, "background-color"),
+      ( 
+        state: hover,
+      )
+    ),
+
+    // Adding opacity-10
+    "opacity": map-merge(
+      map-get($utilities, "opacity"),
+      ( 
+        state: hover,
+        values: map-merge(
+          map-get(map-get($utilities, "opacity"), "values"),
+          (10: 0.1),
+        ),
+      )
+    ),
+
+    // Adding responsive to rounded
+    "rounded": map-merge(
+      map-get($utilities, "rounded"),
+      ( 
+        responsive: true,
+      )
+    ),
+
+    // Adding responsive to rounded-top
+    "rounded-top": map-merge(
+      map-get($utilities, "rounded-top"),
+      ( 
+        responsive: true,
+      )
+    ),
+
+    // Adding responsive to rounded-end
+    "rounded-end": map-merge(
+      map-get($utilities, "rounded-end"),
+      ( 
+        responsive: true,
+      )
+    ),
+
+    // Adding responsive to rounded-bottom
+    "rounded-bottom": map-merge(
+      map-get($utilities, "rounded-bottom"),
+      ( 
+        responsive: true,
+      )
+    ),
+
+    // Adding responsive to rounded-start
+    "rounded-start": map-merge(
+      map-get($utilities, "rounded-start"),
+      ( 
+        responsive: true,
+      )
+    ),
+
+    // Adding responsive to position
+    "position": map-merge(
+      map-get($utilities, "position"),
+      ( 
+        responsive: true,
+      )
+    ),
+
+    // Adding something else
+
+  )
+);

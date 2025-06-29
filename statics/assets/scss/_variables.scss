@@ -1,0 +1,234 @@
+
+@import "color_palette/_color_palette.scss";
+
+$blue: $blue-500;
+$indigo: $indigo-500;
+$purple: $purple-500;
+$pink: $pink-500;
+$red: $rose-500;
+$orange: $orange-500;
+$yellow: $yellow-500;
+$green: $green-500;
+$teal: $teal-500;
+$cyan: $cyan-500;
+
+
+// scss-docs-start theme-color-variables
+$primary:       $orange-600;
+$secondary:     $gray-600;
+$success:       $emerald-500;
+$info:          $blue-500;
+$warning:       $amber-500;
+$danger:        $rose-500;
+$light:         $gray-100;
+$dark:          $gray-900;
+// scss-docs-end theme-color-variables
+
+
+// Body start
+//Settings for the `<body>` element.
+
+// Replace bg for light
+$body-color: $gray-700;
+$body-bg: $gray-0;
+
+$body-secondary-color: $gray-600;
+$body-secondary-bg: $gray-100;
+
+$body-tertiary-color: $gray-500;
+$body-tertiary-bg: $gray-50;
+
+$body-emphasis-color: $gray-900;
+
+// Replace bg for dark
+$body-color-dark: $gray-200;
+$body-bg-dark: $gray-900;
+
+$body-secondary-color-dark: $gray-400;
+$body-secondary-bg-dark: $gray-700;
+
+$body-tertiary-color-dark: $gray-400;
+$body-tertiary-bg-dark: $gray-800;
+
+$body-emphasis-color-dark: $gray-0;
+
+// Body end
+//Settings for the `<body>` element end.
+
+
+
+//  ---  For text color on light  ---  
+// scss-docs-start theme-text-light-variables
+$primary-text-emphasis: $orange-700;
+$secondary-text-emphasis: $gray-700;
+$success-text-emphasis:   $emerald-700;
+$info-text-emphasis:      $blue-600;
+$warning-text-emphasis:   $amber-700;
+$danger-text-emphasis:    $rose-700;
+$light-text-emphasis:     $gray-500;
+$dark-text-emphasis:      $gray-600;
+// scss-docs-end theme-text-light-variables
+
+//  ---  For text color on dark  ---  
+// scss-docs-start theme-text-dark-variables
+$primary-text-emphasis-dark: $orange-300;
+$secondary-text-emphasis-dark:      $gray-400;
+$success-text-emphasis-dark:        $emerald-300;
+$info-text-emphasis-dark:           $blue-300;
+$warning-text-emphasis-dark:        $amber-300;
+$danger-text-emphasis-dark:         $rose-300;
+$light-text-emphasis-dark:          $gray-0;
+$dark-text-emphasis-dark:           $gray-400;
+// scss-docs-end theme-text-dark-variables
+
+
+
+
+
+//  ---  For background color on light  ---  
+// scss-docs-start theme-bg-subtle-variables
+$primary-bg-subtle: $orange-200;
+$secondary-bg-subtle:     $gray-200;
+$success-bg-subtle:       $emerald-200;
+$info-bg-subtle:          $blue-200;
+$warning-bg-subtle:       $amber-100;
+$danger-bg-subtle:        $rose-200;
+$light-bg-subtle:         $gray-50;
+$dark-bg-subtle:          $gray-300;
+// scss-docs-end theme-bg-subtle-variables
+
+//  ---  For background color on dark  ---  
+// scss-docs-start theme-bg-subtle-dark-variables
+$primary-bg-subtle-dark:            $orange-900;
+$secondary-bg-subtle-dark:          $gray-800;
+$success-bg-subtle-dark:            $emerald-800;
+$info-bg-subtle-dark:               $blue-800;
+$warning-bg-subtle-dark:            $amber-700;
+$danger-bg-subtle-dark:             $rose-800;
+$light-bg-subtle-dark:              $gray-700;
+$dark-bg-subtle-dark:               $gray-950;
+// scss-docs-end theme-bg-subtle-dark-variables
+
+
+//  ---  For carousels on light  ---  
+$carousel-control-color: var(--bs-secondary-color);
+$carousel-indicator-active-bg: var(--bs-secondary-color);
+
+//  ---  For carousels on dark  ---
+$carousel-dark-indicator-active-bg: var(--bs-secondary-color);
+
+$enable-negative-margins: true;
+// $navbar-light-color: $dark;
+// $navbar-dark-color: $light;
+
+// Close button
+// $btn-close-color: $dark;
+// $btn-close-opacity: .90;
+// $btn-close-hover-opacity: .95;
+
+
+// $enable-shadows: true;
+
+
+
+// scss-docs-start position-map
+$position-values: (
+  0: 0,
+  10: 10%,
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%
+);
+// scss-docs-end position-map
+
+
+@import "./node_modules/bootstrap/scss/_functions";
+@import "./node_modules/bootstrap/scss/_variables";
+@import "./node_modules/bootstrap/scss/_maps";
+@import "./node_modules/bootstrap/scss/_mixins";
+
+
+
+// Accordion style
+// $accordion-padding-x: 0rem;
+
+// $accordion-body-padding-x: $accordion-padding-x;
+// $accordion-button-padding-x: $accordion-padding-x;
+
+// $accordion-border-color:                  rbg(--bs-emphasis-color-rgb, 1);
+// $accordion-border-color:                  var(--bs-emphasis-color);
+
+// $accordion-border-color:                  var(--#{$prefix}border-color);
+
+$accordion-border-color:                  rgba(var(--bs-emphasis-color-rgb), 0.1);
+
+$accordion-button-active-bg: transparent;
+$accordion-button-active-color: $primary;
+
+$accordion-icon-color: $gray-900;
+$accordion-icon-color-dark: $gray-0;
+
+$accordion-icon-active-color: $primary;
+$accordion-icon-active-color-dark: $primary;
+
+$accordion-button-focus-border-color:     transparent;
+$accordion-button-focus-box-shadow:       none;
+
+
+$accordion-icon-width:                    1.75rem;
+
+// For light mode
+$accordion-button-icon: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="#{$accordion-icon-color}" class="bi bi-plus" viewBox="0 0 16 16"> <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/> </svg>');
+$accordion-button-active-icon:  url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="#{$accordion-icon-active-color}" class="bi bi-dash" viewBox="0 0 16 16"> <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/> </svg>');
+
+// For dark mode
+$accordion-button-icon-dark: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="#{$accordion-icon-color-dark}" class="bi bi-plus" viewBox="0 0 16 16"> <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/> </svg>');
+$accordion-button-active-icon-dark:  url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="#{$accordion-icon-active-color-dark}" class="bi bi-dash" viewBox="0 0 16 16"> <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/> </svg>');
+
+
+$custom-spacers: (
+    6: $spacer * 4,
+    7: $spacer * 6,
+    8: $spacer * 8,
+    9: $spacer * 10,
+    10: $spacer * 12,
+    11: $spacer * 14,
+    12: $spacer * 16,
+    13: $spacer * 18,
+    14: $spacer * 20,
+    15: $spacer * 22,
+);
+$spacers: map-merge($custom-spacers, $spacers);
+
+
+
+// Dropdown start
+
+$dropdown-border-color:             rgba(var(--bs-tertiary-color-rgb), 0.1);
+$dropdown-divider-bg:               $dropdown-border-color;
+
+// $dropdown-min-width:                9rem;
+// $dropdown-padding-x:                .80rem;
+// $dropdown-padding-y:                .80rem;
+// $dropdown-spacer:                   .125rem;
+// $dropdown-font-size:                $font-size-base*0.85;
+// $dropdown-bg:                       var(--#{$prefix}body-bg);
+// $dropdown-border-radius:            0.75rem;
+// $dropdown-border-width:             $border-width;
+// $dropdown-inner-border-radius:      0.75rem;
+// $dropdown-divider-margin-y:         $spacer * .5;
+
+// $dropdown-link-hover-color:         $primary;
+
+
+
+// $dropdown-item-padding-y:           $spacer * .35;
+// $dropdown-item-padding-x:           $spacer;
+
+// $dropdown-header-padding-x:         .25rem;
+// $dropdown-header-padding-y:         .5rem;
+// $dropdown-header-padding:           $dropdown-header-padding-y $dropdown-header-padding-x; // Deprecated in v5.2.0
+
+// Dropdown end
+

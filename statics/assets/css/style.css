@@ -1,0 +1,255 @@
+/*  
+  -------------------------------------------
+  -----      CSS for the font used      -----
+  -------------------------------------------
+*/
+
+@import url('./font/inter.css');
+
+body {
+    font-family: 'Inter var', sans-serif;
+    font-feature-settings: "cv02","cv03","cv04","cv11";
+}
+
+
+
+/*  
+  ------------------------------------------- 
+  -----      CSS for the preloader      -----
+  -------------------------------------------
+*/
+
+.loader-wrapper {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    background-color: rgba(var(--bs-body-bg-rgb), 1) !important;
+    display:flex;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 2000 !important;
+}
+
+
+
+/*  
+  -------------------------------------------------------------------------------- 
+  -----      CSS for the default styles for both directions RTL and LTR      -----
+  --------------------------------------------------------------------------------
+*/
+
+.left-to-right {
+    display: none !important;
+}
+.right-to-left {
+    display: none !important;
+}
+[dir="ltr"] .left-to-right {
+    display: inline !important;
+}
+[dir="rtl"] .right-to-left {
+    display: inline !important;
+}
+
+[dir="rtl"] .rtl-flip {
+    transform: scaleX(-1) !important;
+}
+
+[dir="rtl"] .breadcrumb-item + .breadcrumb-item::before {
+    transform: scaleX(-1);
+}
+
+
+
+/*  
+  -------------------------------------------  
+  -----      CSS for the AOS's RTL      -----
+  -------------------------------------------
+*/
+
+[dir="rtl"] [data-aos=fade-left] {
+    transform: translate3d(-100px, 0, 0);
+}
+[dir="rtl"] [data-aos=fade-right] {
+    transform: translate3d(100px, 0, 0); 
+}
+
+[dir="rtl"] [data-aos=fade-up-left] {
+    transform: translate3d(-100px, 100px, 0); 
+}
+[dir="rtl"] [data-aos=fade-up-right] {
+    transform: translate3d(100px, 100px, 0); 
+}
+
+[dir="rtl"] [data-aos=fade-down-left] {
+    transform: translate3d(-100px,-100px,0); 
+}
+[dir="rtl"] [data-aos=fade-down-right] {
+    transform: translate3d(100px, -100px, 0); 
+}
+
+[dir="rtl"] [data-aos=flip-right] {
+    transform: perspective(2500px) rotateY(-100deg);
+}
+[dir="rtl"] [data-aos=flip-left] {
+    transform: perspective(2500px) rotateY(100deg);
+}
+[dir="rtl"] [data-aos=flip-right].aos-animate {
+    transform: perspective(2500px) rotateY(0);
+}
+[dir="rtl"] [data-aos=flip-left].aos-animate {
+    transform: perspective(2500px) rotateY(0);
+}
+
+[dir="rtl"] [data-aos=slide-left] {
+    transform: translate3d(-100%,0,0);
+}
+[dir="rtl"] [data-aos=slide-right] {
+    transform: translate3d(100%,0,0);
+}
+
+[dir="rtl"] [data-aos=zoom-in-right] {
+    transform: translate3d(100px,0,0) scale(.6);
+}
+[dir="rtl"] [data-aos=zoom-in-left] {
+    transform: translate3d(-100px,0,0) scale(.6);
+}
+
+[dir="rtl"] [data-aos=zoom-out-right] {
+    transform: translate3d(100px,0,0) scale(1.2);
+}
+[dir="rtl"] [data-aos=zoom-out-left] {
+    transform: translate3d(-100px,0,0) scale(1.2);
+}
+
+
+
+
+
+/*  
+  ----------------------------------------------------  
+  -----      CSS for the button back to top      -----
+  ----------------------------------------------------
+*/
+
+.btn-back-to-top {
+    position: fixed;
+    bottom: 20px;
+    display: none;
+    z-index: 10;
+}
+
+[dir="ltr"] .btn-back-to-top {
+    right: 20px;
+}
+
+[dir="rtl"] .btn-back-to-top {
+    left: 20px;
+}
+
+
+
+/*  
+  ------------------------------------------------
+  -----      CSS for the top navigation      -----
+  ------------------------------------------------
+*/
+
+.navigation {
+    z-index: 1030;
+}
+
+
+
+/*  
+  -----------------------------------------------------  
+  -----      CSS for the pulsing play button      -----
+  -----------------------------------------------------
+*/
+
+.video-play-button {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    box-sizing: content-box;
+    display: block;
+    width: calc(32px + 30px);
+    height: calc(44px + 30px);
+    border-radius: 50%;
+    padding: 18px 20px 18px 28px;
+}
+
+
+[dir="ltr"] .video-play-button {
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+[dir="rtl"] .video-play-button {
+    right: 50%;
+    transform: translateX(50%) translateY(-50%);
+}
+
+.video-play-button:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: calc(65px + 30px);
+    height: calc(65px + 30px);
+    background: var(--bs-primary);
+    border-radius: 50%;
+    animation: pulseBorder 1500ms ease-out infinite;
+}
+
+.video-play-button:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: calc(50px + 30px);
+    height: calc(50px + 30px);
+    background: var(--bs-primary);
+    border-radius: 50%;
+    transition: all 200ms;
+}
+
+.video-play-button:hover:after {
+    background: rgba(var(--bs-primary-rgb), 0.8);
+}
+
+.video-play-button span {
+    display: block;
+    position: relative;
+    z-index: 3;
+    width: 0;
+    height: 0;
+    border-left: calc(16px + 5px) solid white;
+    border-top: calc(11px + 5px) solid transparent;
+    border-bottom: calc(11px + 5px) solid transparent;
+}
+
+
+@keyframes pulseBorder {
+    0% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+        opacity: 0;
+    }
+}
+
+
+
+

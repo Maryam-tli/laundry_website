@@ -1,0 +1,16 @@
+{
+  "name": "tigmatemplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch main.scss:../css/main.css --no-source-map",
+    "build": "sass --watch main.scss:../css/main.min.css --style compressed --no-source-map"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}
