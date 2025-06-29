@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +28,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+# Email
+EMAIL_BACKEND = config('EMAIL_BACKEND')
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_PORT = config('EMAIL_PORT', cast=int)
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
 # Application definition
 
 INSTALLED_APPS = [
@@ -55,7 +63,7 @@ ROOT_URLCONF = 'dj_folder.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],  # Directory for custom templates
+        'DIRS': [BASE_DIR / 'template'],  # Directory for custom templates
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,8 +84,12 @@ WSGI_APPLICATION = 'dj_folder.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',  # Use PostgreSQL as the database engine
+        'NAME': config('DB_NAME'),  # Database name
+        'USER': config('DB_USER'),  # Database user
+        'PASSWORD': config('DB_PASSWORD'),  # Database password
+        'HOST': config('DB_HOST'),  # Database host
+        'PORT': config('DB_PORT'),  # Database port
     }
 }
 
@@ -120,7 +132,7 @@ STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'static'  # Directory for static files
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'  # Directory for media files
-STATICFILS_DIRS = [
+STATICFILES_DIRS = [
     BASE_DIR / 'statics',  # Additional directory for static files
 ]
 
