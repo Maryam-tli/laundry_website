@@ -1,9 +1,10 @@
+{% load static %}
 <!doctype html>
 <html lang="en" dir="ltr" data-bs-theme="auto">
 <head>
 
     <!-- Include JavaScript for color modes -->
-    <script src="./assets/js/color-modes.js"></script>
+    <script src="{% static 'assets/js/color-modes.js' %}"></script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,17 +26,19 @@
 
         Be careful if you change the site.webmanifest file, as you need to update the src attribute of the icons array to match the new path of your icon files. Otherwise, your icons may not display correctly on some devices. 
     -->
-	<link rel="apple-touch-icon" sizes="180x180" href="./assets/logo/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="./assets/logo/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="./assets/logo/favicon-16x16.png">
-	<link rel="icon" type="image/x-icon" href="./assets/logo/favicon.ico">
-	<link rel="manifest" href="./assets/logo/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/logo/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/logo/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/logo/favicon-16x16.png' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/logo/favicon.ico' %}">
+    <link rel="manifest" href="{% static 'assets/logo/site.webmanifest' %}">
+
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="./assets/libraries/glide/css/glide.core.min.css">
-    <link rel="stylesheet" href="./assets/libraries/aos/aos.css">
-    <link rel="stylesheet" href="./assets/css/main.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
+	<link rel="stylesheet" href="{% static 'assets/libraries/glide/css/glide.core.min.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/libraries/aos/aos.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/main.min.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+
 
     <!-- Open Graph Meta Tags for Social Sharing -->
     <!-- Update the 'title' and 'description' content below to enhance social sharing -->
@@ -85,8 +88,8 @@
 	<header class="navigation position-absolute w-100 bg-body-tertiary shadow border-bottom border-light border-opacity-10 rounded-bottom-3 rounded-bottom-sm-4">
 	    <nav class="navbar navbar-expand-xl" aria-label="Offcanvas navbar large">
 	        <div class="container py-1">
-	            <a href="./index.html" class="navbar-brand">
-	                <img src="./assets/logo/logo.png" height="40" alt="logo">
+	            <a href="index.html" class="navbar-brand">
+	                <img src="{% static 'assets/logo/logo.png' %}" height="40" alt="logo">
 	            </a>
 
 	            <div class="dropdown ms-3 order-last">
@@ -157,7 +160,7 @@
 	                <div class="offcanvas-header" style="padding: 2rem 2rem 1.5rem 2rem;">
 	                    <h5 class="offcanvas-title m-0" id="offcanvasNavbar2Label">
 	                        <a class="navbar-brand" href="javascript:;">
-	                            <img src="./assets/logo/logo.png" height="32" alt="logo">
+	                            <img src="{% static 'assets/logo/logo.png' %}" height="32" alt="logo">
 	                        </a>
 	                    </h5>
 	                    <button type="button" class="btn-close text-body-emphasis" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -166,19 +169,19 @@
 	                <div class="offcanvas-body">
 	                    <ul class="navbar-nav align-items-xl-center flex-grow-1 column-gap-4 row-gap-4 row-gap-xl-2">
 	                        <li class="nav-item ms-xl-auto">
-	                            <a href="./home.html" class="px-3 text-body-emphasis bg-body-secondary-hover nav-link rounded-3 text-base leading-6 fw-semibold" aria-current="page">
+	                            <a href="home.html" class="px-3 text-body-emphasis bg-body-secondary-hover nav-link rounded-3 text-base leading-6 fw-semibold" aria-current="page">
 	                                Home
 	                            </a>
 	                        </li>
 
 	                        <li class="nav-item">
-	                            <a href="./services.html" class="px-3 text-body-emphasis bg-body-secondary-hover nav-link rounded-3 text-base leading-6 fw-semibold">
+	                            <a href="services.html" class="px-3 text-body-emphasis bg-body-secondary-hover nav-link rounded-3 text-base leading-6 fw-semibold">
 	                                Services
 	                            </a>
 	                        </li>
 
 	                        <li class="nav-item">
-	                            <a href="./about.html" class="px-3 text-body-emphasis bg-body-secondary-hover nav-link rounded-3 text-base leading-6 fw-semibold">
+	                            <a href="about.html" class="px-3 text-body-emphasis bg-body-secondary-hover nav-link rounded-3 text-base leading-6 fw-semibold">
 	                                About
 	                            </a>
 	                        </li>
@@ -196,17 +199,17 @@
 					                        </svg>
 					                    </li>
 								        <li>
-								        	<a class="dropdown-item text-body-emphasis bg-body-secondary-hover py-2 text-base leading-6 fw-semibold" href="./blog.html"> 
+								        	<a class="dropdown-item text-body-emphasis bg-body-secondary-hover py-2 text-base leading-6 fw-semibold" href="blog.html"> 
 								        		Blog page 
 								        	</a>
 								        </li>
 								        <li>
-								        	<a class="dropdown-item text-body-emphasis bg-body-secondary-hover py-2 text-base leading-6 fw-semibold" href="./blog-post.html"> 
+								        	<a class="dropdown-item text-body-emphasis bg-body-secondary-hover py-2 text-base leading-6 fw-semibold" href="blog-post.html"> 
 								        		Blog post 
 								        	</a>
 								        </li>
 								        <li>
-								        	<a class="dropdown-item text-body-emphasis bg-body-secondary-hover py-2 text-base leading-6 fw-semibold" href="./blog-author.html"> 	Author page 
+								        	<a class="dropdown-item text-body-emphasis bg-body-secondary-hover py-2 text-base leading-6 fw-semibold" href="blog-author.html"> 	Author page 
 								        	</a>
 								        </li>
 								    </ul>
@@ -214,7 +217,7 @@
 	                        </li>
 
 	                        <li class="nav-item ms-xl-auto">
-	                            <a href="./contact.html" class="px-3 text-body-emphasis bg-body-secondary-hover border nav-link rounded-3 text-base leading-6 fw-semibold text-center">
+	                            <a href="contact.html" class="px-3 text-body-emphasis bg-body-secondary-hover border nav-link rounded-3 text-base leading-6 fw-semibold text-center">
 	                                Contact us
 	                            </a>
 	                        </li>
@@ -229,7 +232,7 @@
 
 	<!-- header body -->
 	<div class="overflow-hidden py-9 py-xl-10 position-relative">
-	   	<img src="./assets/img/bg/bg1.jpg" class="position-absolute z-n1 top-0 h-100 w-100 object-fit-cover" alt="Meeting">
+	   	<img src="{% static 'assets/img/bg/bg1.jpg' }" class="position-absolute z-n1 top-0 h-100 w-100 object-fit-cover" alt="Meeting">
 
 	   	<div class="position-absolute z-n1 top-0 h-100 w-100 bg-dark"
 	        style="opacity: 0.85; mix-blend-mode: multiply; filter: contrast(1.15) brightness(0.85);">
@@ -275,7 +278,7 @@
 				<div class="col-12 col-xl-6">
 					<div class="mx-auto max-w-2xl">
                         <div class="ratio ratio-4x3" data-aos-delay="200" data-aos="fade" data-aos-duration="3000">
-                            <img src="./assets/img/bg/bg5.jpg" class="object-fit-cover rounded-3" alt="presentation">
+                            <img src="{% static 'assets/img/bg/bg5.jpg' %}" class="object-fit-cover rounded-3" alt="presentation">
                         </div>
 					</div>
 				</div>
@@ -345,13 +348,13 @@
 			<div class="row gx-lg-4 row-cols-1 row-cols-lg-2">
 				<div class="col">
                     <div class="ratio ratio-1x1" data-aos-delay="0" data-aos="fade" data-aos-duration="1000">
-                        <img src="./assets/img/bg/bg3.jpg" class="object-fit-cover rounded-3" alt="presentation" loading="lazy">
+                        <img src="{% static 'assets/img/bg/bg3.jpg' %}" class="object-fit-cover rounded-3" alt="presentation" loading="lazy">
                     </div>
 				</div>
 
 				<div class="col d-none d-lg-block">
                     <div class="ratio ratio-1x1" data-aos-delay="100" data-aos="fade" data-aos-duration="1000">
-                        <img src="./assets/img/bg/bg4.jpg" class="object-fit-cover rounded-3" alt="presentation" loading="lazy">
+                        <img src="{% static 'assets/img/bg/bg4.jpg' %}" class="object-fit-cover rounded-3" alt="presentation" loading="lazy">
                     </div>
 				</div>
 			</div>
@@ -384,7 +387,7 @@
 				<div class="col-12 col-xl-6">
 					<div class="mx-auto mx-xl-0 max-w-2xl">
                         <div class="ratio ratio-4x3" data-aos-delay="0" data-aos="fade" data-aos-duration="3000">
-                            <img src="./assets/img/bg/bg2.jpg" class="object-fit-cover rounded-3" alt="presentation" loading="lazy">
+                            <img src="{% static 'assets/img/bg/bg2.jpg' %}" class="object-fit-cover rounded-3" alt="presentation" loading="lazy">
                         </div>
 	                </div>
 				</div>
@@ -412,7 +415,7 @@
 	                <div class="row gx-sm-4 gy-5">
 	                    <div class="col-12 col-md-6">
 	                        <div class="d-flex align-items-center gap-4">
-	                            <img class="rounded-circle" src="./assets/img/small-team/st1.jpg" width="64" height="64" alt="team" loading="lazy">
+	                            <img class="rounded-circle" src="{% static 'assets/img/small-team/st1.jpg" width="64" height="64" alt="team" loading="lazy">
 	                            <div>
 	                                <h3 class="m-0 text-body-emphasis text-base leading-7 tracking-tight fw-semibold">
 	                                    Bob Lee
@@ -426,7 +429,7 @@
 
 	                    <div class="col-12 col-md-6">
 	                        <div class="d-flex align-items-center gap-4">
-	                            <img class="rounded-circle" src="./assets/img/small-team/st2.jpg" width="64" height="64" alt="team" loading="lazy">
+	                            <img class="rounded-circle" src="{% static 'assets/img/small-team/st2.jpg' %}" width="64" height="64" alt="team" loading="lazy">
 	                            <div>
 	                                <h3 class="m-0 text-body-emphasis text-base leading-7 tracking-tight fw-semibold">
 	                                    Alice Chen
@@ -440,7 +443,7 @@
 
 	                    <div class="col-12 col-md-6">
 	                        <div class="d-flex align-items-center gap-4">
-	                            <img class="rounded-circle" src="./assets/img/small-team/st3.jpg" width="64" height="64" alt="team" loading="lazy">
+	                            <img class="rounded-circle" src="{% static 'assets/img/small-team/st3.jpg' %}" width="64" height="64" alt="team" loading="lazy">
 	                            <div>
 	                                <h3 class="m-0 text-body-emphasis text-base leading-7 tracking-tight fw-semibold">
 	                                    David Jones
@@ -454,7 +457,7 @@
 
 	                    <div class="col-12 col-md-6">
 	                        <div class="d-flex align-items-center gap-4">
-	                            <img class="rounded-circle" src="./assets/img/small-team/st4.jpg" width="64" height="64" alt="team" loading="lazy">
+	                            <img class="rounded-circle" src="{% static 'assets/img/small-team/st4.jpg' %}" width="64" height="64" alt="team" loading="lazy">
 	                            <div>
 	                                <h3 class="m-0 text-body-emphasis text-base leading-7 tracking-tight fw-semibold">
 	                                    Emma Wilson
@@ -468,7 +471,7 @@
 
 	                    <div class="col-12 col-md-6">
 	                        <div class="d-flex align-items-center gap-4">
-	                            <img class="rounded-circle" src="./assets/img/small-team/st5.jpg" width="64" height="64" alt="team" loading="lazy">
+	                            <img class="rounded-circle" src="{% static 'assets/img/small-team/st5.jpg' %}" width="64" height="64" alt="team" loading="lazy">
 	                            <div>
 	                                <h3 class="m-0 text-body-emphasis text-base leading-7 tracking-tight fw-semibold">
 	                                    Frank Garcia
@@ -482,7 +485,7 @@
 
 	                    <div class="col-12 col-md-6">
 	                        <div class="d-flex align-items-center gap-4">
-	                            <img class="rounded-circle" src="./assets/img/small-team/st6.jpg" width="64" height="64" alt="team" loading="lazy">
+	                            <img class="rounded-circle" src="{% static 'assets/img/small-team/st6.jpg' %}" width="64" height="64" alt="team" loading="lazy">
 	                            <div>
 	                                <h3 class="m-0 text-body-emphasis text-base leading-7 tracking-tight fw-semibold">
 	                                    Grace Kim
@@ -504,7 +507,7 @@
 	<div class="overflow-hidden py-6 py-sm-7 py-xl-8">
 		<div class="container">
             <div class="ratio ratio-16x9">
-                <img src="./assets/img/bg/bg8.jpg" class="object-fit-cover rounded-3" alt="presentation" loading="lazy">
+                <img src="{% static 'assets/img/bg/bg8.jpg' %}" class="object-fit-cover rounded-3" alt="presentation" loading="lazy">
             </div>
 		</div>
 	</div>
@@ -529,47 +532,47 @@
 						<ul class="glide__slides align-items-center">
 							<li class="glide__slide">
 								<div class="p-5">
-									<img src="./assets/img/partners/logo1.png" class="img-fluid" alt="partners">
+									<img src="{% static 'assets/img/partners/logo1.png' %}" class="img-fluid" alt="partners">
 								</div>
 							</li>
 							<li class="glide__slide">
 								<div class="p-5">
-									<img src="./assets/img/partners/logo2.png" class="img-fluid" alt="partners">
+									<img src="{% static 'assets/img/partners/logo2.png' %}" class="img-fluid" alt="partners">
 								</div>
 							</li>
 							<li class="glide__slide">
 								<div class="p-5">
-									<img src="./assets/img/partners/logo3.png" class="img-fluid" alt="partners">
+									<img src="{% static 'assets/img/partners/logo3.png' %}" class="img-fluid" alt="partners">
 								</div>
 							</li>
 							<li class="glide__slide">
 								<div class="p-5">
-									<img src="./assets/img/partners/logo4.png" class="img-fluid" alt="partners">
+									<img src="{% static 'assets/img/partners/logo4.png' %}" class="img-fluid" alt="partners">
 								</div>
 							</li>
 							<li class="glide__slide">
 								<div class="p-5">
-									<img src="./assets/img/partners/logo5.png" class="img-fluid" alt="partners">
+									<img src="{% static 'assets/img/partners/logo5.png' %}" class="img-fluid" alt="partners">
 								</div>
 							</li>
 							<li class="glide__slide">
 								<div class="p-5">
-									<img src="./assets/img/partners/logo6.png" class="img-fluid" alt="partners">
+									<img src="{% static 'assets/img/partners/logo6.png' %}" class="img-fluid" alt="partners">
 								</div>
 							</li>
 							<li class="glide__slide">
 								<div class="p-5">
-									<img src="./assets/img/partners/logo7.png" class="img-fluid" alt="partners">
+									<img src="{% static 'assets/img/partners/logo7.png' %}" class="img-fluid" alt="partners">
 								</div>
 							</li>
 							<li class="glide__slide">
 								<div class="p-5">
-									<img src="./assets/img/partners/logo8.png" class="img-fluid" alt="partners">
+									<img src="{% static 'assets/img/partners/logo8.png' %}" class="img-fluid" alt="partners">
 								</div>
 							</li>
 							<li class="glide__slide">
 								<div class="p-5">
-									<img src="./assets/img/partners/logo9.png" class="img-fluid" alt="partners">
+									<img src="{% static 'assets/img/partners/logo9.png' %}" class="img-fluid" alt="partners">
 								</div>
 							</li>		
 						</ul>
@@ -585,7 +588,7 @@
 	<div class="pb-9 pt-7">
 		<div class="container">
 			<div class="py-6 position-relative text-white rounded-3">
-				<img src="./assets/img/bg/bg10.jpg" class="position-absolute z-n1 top-0 h-100 w-100 object-fit-cover rounded-3" loading="lazy" alt="Meeting">
+				<img src="{% static 'assets/img/bg/bg10.jpg' %}" class="position-absolute z-n1 top-0 h-100 w-100 object-fit-cover rounded-3" loading="lazy" alt="Meeting">
 
 			   	<div class="position-absolute z-n1 top-0 h-100 w-100 bg-dark rounded-3"
 			        style="opacity: 0.85; mix-blend-mode: multiply; filter: contrast(1.15) brightness(0.85);">
@@ -687,23 +690,23 @@
 	            <div class="order-first order-xl-last">
 	                <ul class="nav row gy-4 gx-sm-4 row-cols-2 row-cols-sm-auto">
 	                    <li class="nav-item">
-	                        <a href="./about.html" class="p-0 text-body-secondary nav-link leading-6 text-sm"> About </a>
+	                        <a href="about.html" class="p-0 text-body-secondary nav-link leading-6 text-sm"> About </a>
 	                    </li>
 	                    <li class="nav-item">
-	                        <a href="./services.html" class="p-0 text-body-secondary nav-link leading-6 text-sm"> Services </a>
+	                        <a href="services.html" class="p-0 text-body-secondary nav-link leading-6 text-sm"> Services </a>
 	                    </li>
 	                    <li class="nav-item">
-	                        <a href="./blog.html" class="p-0 text-body-secondary nav-link leading-6 text-sm"> Blog </a>
+	                        <a href="blog.html" class="p-0 text-body-secondary nav-link leading-6 text-sm"> Blog </a>
 	                    </li>
 	                    <li class="nav-item">
-	                        <a href="./contact.html" class="p-0 text-body-secondary nav-link leading-6 text-sm"> Contact us </a>
+	                        <a href="contact.html" class="p-0 text-body-secondary nav-link leading-6 text-sm"> Contact us </a>
 	                    </li>
 	                </ul>
 	            </div>
 
 	            <div class="">
-	                <a href="./index.html" class="link-body-emphasis d-flex align-items-center text-decoration-none">
-	                    <img src="./assets/logo/logo.png" height="24" alt="logo" loading="lazy">
+	                <a href="index.html" class="link-body-emphasis d-flex align-items-center text-decoration-none">
+	                    <img src="{% static 'assets/logo/logo.png' %}" height="24" alt="logo" loading="lazy">
 	                </a>
 	            </div>
 
@@ -728,10 +731,10 @@
 
 
 	<!-- Bootstrap JavaScript: Bundle with Popper -->
-	<script src="./assets/libraries/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<script src="./assets/libraries/glide/glide.min.js"></script>
-	<script src="./assets/libraries/aos/aos.js"></script>
-	<script src="./assets/js/scripts.js"></script>
+	<script src="{% static 'assets/libraries/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+	<script src="{% static 'assets/libraries/glide/glide.min.js' %}"></script>
+	<script src="{% static 'assets/libraries/aos/aos.js' %}"></script>
+	<script src="{% static 'assets/js/scripts.js' %}"></script>
 
 
 
