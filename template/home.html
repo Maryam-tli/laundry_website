@@ -200,7 +200,7 @@
 					                        </svg>
 					                    </li>
 								        <li>
-								        	<a class="dropdown-item text-body-emphasis bg-body-secondary-hover py-2 text-base leading-6 fw-semibold" href="blog.html"> 
+								        	<a class="dropdown-item text-body-emphasis bg-body-secondary-hover py-2 text-base leading-6 fw-semibold" href="{% url 'blog' %}"> 
 								        		Blog page 
 								        	</a>
 								        </li>
@@ -622,30 +622,28 @@
 	        <div class="row gy-5">
 	            <div class="col-12 col-xl-6">
 	                <div class="pb-3 max-w-lg position-relative">
-	                    <form method="post" target="_blank" novalidate class="mc-embedded-subscribe-form">
+	                    <h2 class="text-body-emphasis leading-6 text-4xl tracking-tight fw-bold">
+	                        Subscribe to our newsletter.
+	                    </h2>
+	                    <p class="m-0 mt-3 text-body-secondary text-lg leading-8">
+	                        Experience the ease of code deployment with just a click. Simplify your development tasks, and increase productivity.
+	                    </p>
 
-	                        <h2 class="text-body-emphasis leading-6 text-4xl tracking-tight fw-bold">
-	                            Subscribe to our newsletter.
-	                        </h2>
-	                        <p class="m-0 mt-3 text-body-secondary text-lg leading-8">
-	                            Experience the ease of code deployment with just a click. Simplify your development tasks, and increase productivity.
-	                        </p>
+	                    <div class="mt-4 mb-2 d-flex flex-column flex-sm-row w-100 gap-2 js-form-inputs">
+							<form method="post" action="{% url 'home' %}">
+    							{% csrf_token %}
+    							{{ form_2.as_p }}
+    							<button type="submit" name="subscribe_submit" class="btn btn-primary">Subscribe</button>
+							</form>
+	                    </div>
 
-	                        <div class="mt-4 mb-2 d-flex flex-column flex-sm-row w-100 gap-2 js-form-inputs">
-	                            <label for="emailSubscribe1" class="visually-hidden">Email address</label>
-	                            <input type="email" name="EMAIL" id="emailSubscribe1" value="" class="form-control leading-6 text-sm max-w-xl" placeholder="Enter your email">
-	                            <button type="submit" name="subscribe" class="btn btn-primary text-white fw-semibold text-sm">Subscribe</button>
-	                        </div>
+	                    <!-- This div is related to Mailchimp integration and handled by a function in our scripts.js file, so no need to worry about it. -->
+	                    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+	                        <input type="text" class="js-validate-robot" name="b_a4752870f583bb49a02427b3c_143fa46c21" tabindex="-1" value="">
+	                    </div>
 
-	                        <!-- This div is related to Mailchimp integration and handled by a function in our scripts.js file, so no need to worry about it. -->
-	                        <div style="position: absolute; left: -5000px;" aria-hidden="true">
-	                            <input type="text" class="js-validate-robot" name="b_a4752870f583bb49a02427b3c_143fa46c21" tabindex="-1" value="">
-	                        </div>
-
-	                        <!-- response -->
-	                        <div class="js-subscribe-response"></div>
-
-	                    </form>
+	                    <!-- response -->
+	                    <div class="js-subscribe-response"></div>
 	                </div>
 	            </div>
 
