@@ -603,8 +603,8 @@
 							Let us handle your laundry, so you can focus on what matters.
 						</p>
 						<div class="mt-4 pt-3 text-center">
-							<a href="javascript:;" class="btn btn-lg btn-primary text-white text-sm fw-semibold">
-								Schedule Your Pickup
+							<a href="javascript:;" class="btn btn-lg btn-primary text-white text-sm fw-semibold" data-bs-toggle="modal" data-bs-target="#pickupModal">
+    							Schedule Your Pickup
 							</a>
 						</div>
 					</div>
@@ -620,30 +620,28 @@
 	        <div class="row gy-5">
 	            <div class="col-12 col-xl-6">
 	                <div class="pb-3 max-w-lg position-relative">
-	                    <form method="post" target="_blank" novalidate class="mc-embedded-subscribe-form">
+	                    <h2 class="text-body-emphasis leading-6 text-4xl tracking-tight fw-bold">
+	                        Subscribe to our newsletter.
+	                    </h2>
+	                    <p class="m-0 mt-3 text-body-secondary text-lg leading-8">
+	                        Experience the ease of code deployment with just a click. Simplify your development tasks, and increase productivity.
+	                    </p>
 
-	                        <h2 class="text-body-emphasis leading-6 text-4xl tracking-tight fw-bold">
-	                            Subscribe to our newsletter.
-	                        </h2>
-	                        <p class="m-0 mt-3 text-body-secondary text-lg leading-8">
-	                            Experience the ease of code deployment with just a click. Simplify your development tasks, and increase productivity.
-	                        </p>
+	                    <div class="mt-4 mb-2 d-flex flex-column flex-sm-row w-100 gap-2 js-form-inputs">
+							<form method="post" action="{% url 'about' %}">
+    							{% csrf_token %}
+    							{{ form_2.as_p }}
+    							<button type="submit" name="subscribe_submit" class="btn btn-primary">Subscribe</button>
+							</form>
+	                    </div>
 
-	                        <div class="mt-4 mb-2 d-flex flex-column flex-sm-row w-100 gap-2 js-form-inputs">
-	                            <label for="emailSubscribe1" class="visually-hidden">Email address</label>
-	                            <input type="email" name="EMAIL" id="emailSubscribe1" value="" class="form-control leading-6 text-sm max-w-xl" placeholder="Enter your email">
-	                            <button type="submit" name="subscribe" class="btn btn-primary text-white fw-semibold text-sm">Subscribe</button>
-	                        </div>
+	                    <!-- This div is related to Mailchimp integration and handled by a function in our scripts.js file, so no need to worry about it. -->
+	                    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+	                        <input type="text" class="js-validate-robot" name="b_a4752870f583bb49a02427b3c_143fa46c21" tabindex="-1" value="">
+	                    </div>
 
-	                        <!-- This div is related to Mailchimp integration and handled by a function in our scripts.js file, so no need to worry about it. -->
-	                        <div style="position: absolute; left: -5000px;" aria-hidden="true">
-	                            <input type="text" class="js-validate-robot" name="b_a4752870f583bb49a02427b3c_143fa46c21" tabindex="-1" value="">
-	                        </div>
-
-	                        <!-- response -->
-	                        <div class="js-subscribe-response"></div>
-
-	                    </form>
+	                    <!-- response -->
+	                    <div class="js-subscribe-response"></div>
 	                </div>
 	            </div>
 
@@ -735,6 +733,27 @@
 	<script src="{% static 'assets/libraries/glide/glide.min.js' %}"></script>
 	<script src="{% static 'assets/libraries/aos/aos.js' %}"></script>
 	<script src="{% static 'assets/js/scripts.js' %}"></script>
+
+	<div class="modal fade" id="pickupModal" tabindex="-1" aria-labelledby="pickupModalLabel" aria-hidden="true">
+  		<div class="modal-dialog">
+    		<div class="modal-content">
+      		<div class="modal-header">
+        		<h5 class="modal-title" id="pickupModalLabel">Schedule Your Pickup</h5>
+        		<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      		</div>
+      		<div class="modal-body">
+        		<!-- اینجا فرم بگذار -->
+        		<form method="post" action="{% url 'about' %}">
+  					{% csrf_token %}
+  					{{ form.as_p }}
+  					<button type="submit" name="schedule_submit" class="btn btn-primary">Submit</button>
+				</form>
+
+      		</div>
+    		</div>
+  		</div>
+	</div>
+
 
 
 
