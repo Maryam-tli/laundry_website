@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'laundry_app',  # Custom app for laundry management
     'blog_app',  # Custom app for blog management
+    'taggit',  # For tagging functionality in blog posts
 ]
 
 MIDDLEWARE = [
