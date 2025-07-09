@@ -13,3 +13,9 @@ class SubscriberAdmin(admin.ModelAdmin):
     search_fields = ('email',)
     fields = ('email',)
 admin.site.register(Subscriber, SubscriberAdmin)
+
+class ContactMessageAdmin(admin.ModelAdmin):
+    list_display = ('full_name', 'email', 'phone', 'subject', 'created_at', 'agree')
+    search_fields = ('full_name', 'agree', 'subject')
+    fields = ('full_name', 'email', 'phone', 'subject', 'message', 'agree')
+admin.site.register(ContactMessage, ContactMessageAdmin)
