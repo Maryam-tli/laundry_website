@@ -17,3 +17,16 @@ class Subscriber(models.Model):
 
     def __str__(self):
         return self.email
+
+
+class ContactMessage(models.Model):
+    full_name = models.CharField(max_length=100)
+    email = models.EmailField(help_text="Please enter a valid email address")
+    phone = models.CharField(max_length=20)
+    subject = models.CharField(max_length=200)
+    message = models.TextField()
+    agree = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Message from {self.full_name} - {self.subject}"
