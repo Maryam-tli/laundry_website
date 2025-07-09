@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('laundry_app.urls')),  # Include URLs from the laundry_app
     path('blog/', include('blog_app.urls')),  # Include URLs from the blog_app
+    path('summernote/', include('django_summernote.urls')),  # Include URLs for django_summernote
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
