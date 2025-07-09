@@ -106,3 +106,58 @@ def post_detail(request, slug):
         'form_2': form_2,
     }
     return render(request, 'blog-post.html', context)
+
+def search_view(request):
+    posts = Post.objects.filter(status=True)
+    query = request.GET.get('s')
+    if query:
+        posts = posts.filter(title__icontains=query)
+    paginator = Paginator(posts, 4)
+
+    page = request.GET.get('page')
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
+
+    categories = Category.objects.all()
+    tags = Tag.objects.filter(taggit_taggeditem_items__isnull=False).distinct()
+    latest_posts = Post.objects.filter(status=True).order_by('-published_date')[:3]
+    if 'schedule_submit' in request.POST:
+        form = scheduleForm(request.POST)
+        if form.is_valid():
+            pickup = form.save()
+            send_mail(
+                'Pickup Scheduled',
+                f'Your pickup is scheduled on {pickup.date} at {pickup.time}.',
+                'maryamtli@zohomail.com',
+                [pickup.email],
+                fail_silently=False,
+            )
+            return redirect('home')
+
+    elif 'subscribe_submit' in request.POST:
+        form_2 = subscriberForm(request.POST)
+        if form_2.is_valid():
+            subscriber = form_2.save()
+            send_mail(
+                'Welcome to Our Newsletter – You’re Subscribed!',
+                f'Dear User,Thank you for subscribing to our newsletter! We will keep you updated with our latest news and offers.{subscriber.subscribed_at}',
+                'maryamtli@zohomail.com',
+                [subscriber.email],
+                fail_silently=False,
+            )
+            return redirect('home')
+    else:
+        form = scheduleForm()
+        form_2 = subscriberForm()
+
+    context = {'posts': posts,
+        'categories': categories,
+        'tags': tags,
+        'latest_posts': latest_posts,
+        'form': form,
+        'form_2': form_2,}
+    return render(request, 'blog.html', context)
