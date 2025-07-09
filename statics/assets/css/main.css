@@ -17876,3 +17876,29 @@ textarea.form-control-lg {
 #disqus_thread * {
     color: #222 !important;
 }
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag-item {
+  display: inline-block;
+  padding: 0.4em 0.8em;
+  background-color: #e0f0ff;
+  color: #0077cc;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.tag-item:hover {
+  background-color: #0077cc;
+  color: white;
+}
+
+.no-tags {
+  color: #999;
+  font-style: italic;
+}
