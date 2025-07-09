@@ -216,3 +216,19 @@ def tagged_posts(request, slug):
         'form': form,
         'form_2': form_2,
     })
+
+def author_view(request, slug):
+    author = get_object_or_404(Author, slug=slug)
+    posts = Post.objects.filter(author=author, status=True).order_by('-published_date')
+    categories = Category.objects.all()
+    tags = Tag.objects.filter(taggit_taggeditem_items__isnull=False).distinct()
+    latest_posts = Post.objects.filter(status=True).order_by('-published_date')[:3]
+
+    context = {
+        'author': author,
+        'posts': posts,
+        'categories': categories,
+        'tags': tags,
+        'latest_posts': latest_posts,
+    }
+    return render(request, 'author.html', context)
