@@ -5,15 +5,26 @@ from taggit.managers import TaggableManager
 
 class Category(models.Model):
     name = models.CharField(max_length=100, unique=True)
+    slug = models.SlugField(max_length=100, unique=True, blank=True, help_text="Leave blank to auto-generate.")
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+        super(Category, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.name
 
-
 class Author(models.Model):
     name = models.CharField(max_length=100)
+    slug = models.SlugField(max_length=100, unique=True, blank=True, help_text="Leave blank to auto-generate.")
     bio = models.TextField(blank=True, null=True)
     photo = models.ImageField(upload_to='author_photos/', blank=True, null=True)
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+        super(Author, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.name
