@@ -48,7 +48,10 @@ INSTALLED_APPS = [
     'laundry_app',  # Custom app for laundry management
     'blog_app',  # Custom app for blog management
     'taggit',  # For tagging functionality in blog posts
+    'django_summernote',  # For rich text editing in blog posts
 ]
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'  # Security setting to prevent clickjacking
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
