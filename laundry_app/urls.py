@@ -6,4 +6,5 @@ urlpatterns = [
     path('about/', about_view, name='about'),
     path('services/', services_view, name='services'),
     path('contact/', contact_view, name='contact'),
+    path('load-data/', load_data, name='load_data'),
 ]
