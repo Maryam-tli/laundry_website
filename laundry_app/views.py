@@ -140,3 +140,10 @@ def contact_view(request):
             return redirect('contact')
 
     return render(request, 'contact.html', {'form': form, 'form_2': form_2, 'form_3': form_3})
+
+from django.core.management import call_command
+from django.http import HttpResponse
+
+def load_data(request):
+    call_command('loaddata', 'data.json')
+    return HttpResponse("✅ Data loaded successfully!")
