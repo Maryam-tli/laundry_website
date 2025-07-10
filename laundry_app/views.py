@@ -145,5 +145,8 @@ from django.core.management import call_command
 from django.http import HttpResponse
 
 def load_data(request):
-    call_command('loaddata', 'data.json')
-    return HttpResponse("✅ Data loaded successfully!")
+    try:
+        call_command('loaddata', 'data.json')
+        return HttpResponse("✅ Data loaded successfully!")
+    except Exception as e:
+        return HttpResponse(f"❌ Error: {e}")
