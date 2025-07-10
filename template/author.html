@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+	<!-- header body -->
+	<div class="overflow-hidden py-9 py-xl-10 position-relative">
+	   	<img src="{% static 'assets/img/bg/bg1.jpg' %}" class="position-absolute z-n1 top-0 h-100 w-100 object-fit-cover" alt="Meeting">
+
+	   	<div class="position-absolute z-n1 top-0 h-100 w-100 bg-dark"
+	        style="opacity: 0.85; mix-blend-mode: multiply; filter: contrast(1.15) brightness(0.85);">
+	    </div>
+
+	    <div class="position-absolute z-0 top-0 h-100 w-100">
+		    <div class="container h-100 d-flex align-items-center">
+                <div class="max-w-2xl mx-auto mx-xl-0 text-center text-xl-start">
+                    <h1 class="m-0 mt-7 text-white tracking-tight text-6xl fw-bold" data-aos-delay="0" data-aos="fade" data-aos-duration="3000">
+                        Author Team
+                    </h1>
+                    <p class="m-0 mt-4 text-white text-lg leading-8" data-aos-delay="100" data-aos="fade" data-aos-duration="3000">
+                        Discover stories and insights that inspire your creative journey.
+                    </p>
+                </div>
+		    </div>
+	    </div>
+	</div>	
+    <div class="overflow-hidden py-6 py-sm-7 py-xl-8">
+    	<div class="container">
+        	<div class="row gy-5 gx-xl-5 justify-content-between">
+            	<div class="col-12 col-xl-8">
+                	<div class="max-w-3xl mx-auto mx-xl-0 mt-4">
+                    	<!-- Back to Blog -->
+                    	<a class="icon-link link-primary-emphasis icon-link-hover text-decoration-none"
+                       	href="{% url 'blog' %}"
+                       	style="--bs-icon-link-transform: translate3d(-.125rem, 0, 0);">
+                        	<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                             	class="bi fs-1 bi-arrow-left-short rtl-flip" viewBox="0 0 16 16">
+                            	<path fill-rule="evenodd"
+                                  	d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+                        	</svg>
+                        	<span class="fw-bold">
+                            	Back to Blog
+                        	</span>
+                    	</a>
+
+						<div class="p-5 position-relative">
+                			<img src="{{ author.photo.url }}",  alt="{{ author.name }}" , class="rounded-circle"  >
+            			</div>
+
+                    	<!-- Post Title -->
+                    	<h2 class="my-4 text-body-emphasis text-4xl tracking-tight fw-bold">
+                        	{{ author.name }}'s Posts
+                    	</h2>
+
+						<p class="m-0 mt-4 text-body-secondary text-lg leading-8">
+							{{ author.bio|default:"No biography available." }}
+						</p>
+						<div class="mt-5">
+    						<h3 class="mb-4">Posts by {{ author.name }}</h3>
+    						{% if posts %}
+        						<ul class="list-group">
+            						{% for post in posts %}
+                						<li class="list-group-item">
+                    						<a href="{% url 'post_detail' post.slug %}">
+                        						{{ post.title }}
+                    						</a>
+                    						<br>
+                    						<small class="text-muted">
+                        						Published on {{ post.published_date|date:"F j, Y" }}
+                    						</small>
+                						</li>
+            						{% endfor %}
+        						</ul>
+    						{% else %}
+        						<p>No posts found for this author.</p>
+    						{% endif %}
+						</div>
+
+					</div>
+				</div>
+
+
+				<!-- side bar -->
+				<div class="col-12 col-xl-4">
+					<div class="max-w-xl mx-auto mx-xl-0 pt-5 pt-xl-0">
+						<div class="mt-5">
+							<div class="p-4 shadow rounded-3 bg-body-tertiary">
+								<h3 class="text-body-emphasis text-2xl tracking-tight fw-semibold">
+            						Latest Posts
+        						</h3>
+
+        						<hr class="text-body-emphasis opacity-10">
+
+        						{% for item in latest_posts %}
+        						<a href="{% url 'post_detail' item.slug %}" class="d-flex align-items-center mt-4 text-body link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-25-hover">
+            						<div class="p-5 position-relative">
+                						<img src="{{ item.image.url }}" class="position-absolute top-0 start-0 h-100 w-100 object-fit-cover rounded" loading="lazy" alt="{{ item.title }}">
+            						</div>
+            						<div class="ps-3">
+                						<time datetime="{{ item.published_date|date:'Y-m-d' }}" class="d-block text-body-tertiary">
+                    						{{ item.published_date|date:"M d, Y" }}
+                						</time>
+                						<h6 class="m-0 mt-3 text-body-secondary line-clamp-2 text-sm leading-6">
+                    						{{ item.title }}
+                						</h6>
+            						</div>
+        						</a>
+        						{% endfor %}
+							</div>
+						</div>
+
+						<div class="mt-5">
+							<div class="p-4 shadow rounded-3 bg-body-tertiary">
+								<h3 class="text-body-emphasis text-2xl tracking-tight fw-semibold">
+									Categories
+								</h3>
+
+								<hr class="text-body-secondary opacity-10">
+
+								<ul class="ps-3 text-body-secondary">
+    								{% for category in categories %}
+    								<li class="mt-2">
+        								<a href="{% url 'category' category.slug %}"
+           								class="text-body-secondary link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-25-hover text-sm leading-6">
+            								{{ category.name }}
+        								</a>
+    								</li>
+    								{% endfor %}
+								</ul>
+							</div>
+						</div>
+
+						<div class="mt-5">
+							<div class="p-4 shadow rounded-3 bg-body-tertiary">
+								<h3 class="text-body-emphasis text-2xl tracking-tight fw-semibold">
+									Popular Tags
+								</h3>
+								<hr class="text-body-emphasis opacity-10">
+
+								<div class="d-flex flex-wrap gap-3">
+    								{% for tag in tags %}
+        								<a href="{% url 'tagged_posts' tag.slug %}"
+           								class="btn text-body-tertiary border bg-body-secondary-hover text-sm fw-semibold">
+            								{{ tag.name }}
+        								</a>
+    								{% endfor %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
