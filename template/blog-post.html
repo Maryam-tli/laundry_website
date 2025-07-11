@@ -58,9 +58,13 @@
                                      	class="img-fluid rounded-circle" alt="{{ post.author.name }}" loading="lazy">
                             	{% endif %}
 
-                            	<span class="text-body text-sm fw-medium ps-2">
-                                	{{ post.author.name }}
-                            	</span>
+                            		<div class="text-sm leading-6">
+		                                <p class="m-0 fw-semibold">
+		                                    <a href="{% url 'author' slug=post.author.slug %}" class="text-body-emphasis text-decoration-none">
+		                                        {{ post.author.name }}
+		                                    </a>
+		                                </p>
+		                            </div>
 
                             	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                  	class="bi bi-dot text-body-tertiary" viewBox="0 0 16 16">
