@@ -160,3 +160,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Whitenoise Settings
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+CSRF_TRUSTED_ORIGINS = ['https://laundrywebsite-production.up.railway.app']
+CSRF_COOKIE_SECURE = True  # Use secure cookies for CSRF protection
