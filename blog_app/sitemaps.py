@@ -31,7 +31,7 @@ class PostSitemap(Sitemap):
         return Post.objects.filter(status=True)
     
     def lastmod(self, obj):
-        return obj.updated_at
+        return obj.updated_date
 
     def location(self, obj):
         return reverse('post_detail', kwargs={'slug': obj.slug})
