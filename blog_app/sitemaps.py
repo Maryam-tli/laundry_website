@@ -3,7 +3,7 @@ from django.urls import reverse
 from blog_app.models import Post, Category, Author
 from taggit.models import Tag
 
-class StaticViewSitemap(Sitemap):
+class StaticBlogViewSitemap(Sitemap):
     changefreq = "daily"
     priority = 0.5
 
