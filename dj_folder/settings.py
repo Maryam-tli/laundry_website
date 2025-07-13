@@ -59,6 +59,8 @@ INSTALLED_APPS = [
     'django.contrib.sites',  # Required for django-allauth
 ]
 
+SITE_ID = 2  # Required for django-allauth
+
 X_FRAME_OPTIONS = 'SAMEORIGIN'  # Security setting to prevent clickjacking
 
 MIDDLEWARE = [
@@ -99,7 +101,6 @@ WSGI_APPLICATION = 'dj_folder.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(default=config('DATABASE_URL'), conn_max_age=600)
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
