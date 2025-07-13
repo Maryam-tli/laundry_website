@@ -22,16 +22,6 @@ from django.contrib.sitemaps.views import sitemap
 from laundry_app.sitemaps import *
 from blog_app.sitemaps import *
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('laundry_app.urls')),  # Include URLs from the laundry_app
-    path('blog/', include('blog_app.urls')),  # Include URLs from the blog_app
-    path('summernote/', include('django_summernote.urls')),  # Include URLs for django_summernote
-]
-
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
 sitemaps = {
     'static': StaticViewSitemap,
     'blog': StaticBlogViewSitemap,
@@ -40,3 +30,14 @@ sitemaps = {
     'author': AuthorSitemap,
     'tag': TagSitemap,
 }
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('laundry_app.urls')),  # Include URLs from the laundry_app
+    path('blog/', include('blog_app.urls')),  # Include URLs from the blog_app
+    path('summernote/', include('django_summernote.urls')),  # Include URLs for django_summernote
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
