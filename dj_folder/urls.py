@@ -37,6 +37,7 @@ urlpatterns = [
     path('blog/', include('blog_app.urls')),  # Include URLs from the blog_app
     path('summernote/', include('django_summernote.urls')),  # Include URLs for django_summernote
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    path('robots.txt', include('robots.urls')),  # Include robots.txt management
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
