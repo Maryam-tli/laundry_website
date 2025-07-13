@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'blog_app',  # Custom app for blog management
     'taggit',  # For tagging functionality in blog posts
     'django_summernote',  # For rich text editing in blog posts
+    'django.contrib.sites',  # Required for django-allauth
 ]
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'  # Security setting to prevent clickjacking
@@ -95,20 +96,20 @@ WSGI_APPLICATION = 'dj_folder.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql',  # Use PostgreSQL as the database engine
-#        'NAME': config('DB_NAME'),  # Database name
-#        'USER': config('DB_USER'),  # Database user
-#        'PASSWORD': config('DB_PASSWORD'),  # Database password
-#        'HOST': config('DB_HOST'),  # Database host
-#        'PORT': config('DB_PORT'),  # Database port
-#    }
-#}
-
 DATABASES = {
-    'default': dj_database_url.config(default=config('DATABASE_URL'), conn_max_age=600)
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',  # Use PostgreSQL as the database engine
+        'NAME': config('DB_NAME'),  # Database name
+        'USER': config('DB_USER'),  # Database user
+        'PASSWORD': config('DB_PASSWORD'),  # Database password
+        'HOST': config('DB_HOST'),  # Database host
+        'PORT': config('DB_PORT'),  # Database port
+    }
 }
+
+#DATABASES = {
+#    'default': dj_database_url.config(default=config('DATABASE_URL'), conn_max_age=600)
+#}
 
 
 # Password validation
