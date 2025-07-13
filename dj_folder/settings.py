@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'taggit',  # For tagging functionality in blog posts
     'django_summernote',  # For rich text editing in blog posts
     'django.contrib.sites',  # Required for django-allauth
+    'django.contrib.sitemaps',  # For sitemap functionality
 ]
 
 SITE_ID = 2  # Required for django-allauth
