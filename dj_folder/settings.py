@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'django_summernote',  # For rich text editing in blog posts
     'django.contrib.sites',  # Required for django-allauth
     'django.contrib.sitemaps',  # For sitemap functionality
+    'robots',  # For robots.txt management
 ]
 
 SITE_ID = 2  # Required for django-allauth
@@ -154,3 +155,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 CSRF_TRUSTED_ORIGINS = ['https://laundrywebsite-production.up.railway.app']
 CSRF_COOKIE_SECURE = True  # Use secure cookies for CSRF protection
+ROBOTS_USE_HOST = False
+ROBOTS_USE_SITEMAP = False
