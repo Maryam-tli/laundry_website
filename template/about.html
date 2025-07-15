@@ -189,9 +189,11 @@
             				<div class="d-flex align-items-center gap-4">
                 				<img class="rounded-circle" src="{{ item.photo.url }}" width="64" height="64" alt="{{ item.name }}" loading="lazy">
                 				<div>
-									<a href="{% url 'author' item.slug %}" class="text-decoration-none text-dark">
-                        				{{ item.name }}
-									</a>
+                    				<h3 class="m-0 text-body-emphasis text-base leading-7 tracking-tight fw-semibold">
+										<a href="{% url 'author' slug=item.slug %}" class="text-decoration-none text-dark">
+    										{{ item.name }}
+										</a>
+                    				</h3>
                     				{% if item.bio %}
                     				<p class="m-0 text-primary-emphasis text-sm leading-6 fw-semibold">
                         				{{ item.bio|truncatewords:10 }}
