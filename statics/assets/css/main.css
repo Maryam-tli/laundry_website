@@ -17952,3 +17952,13 @@ textarea.form-control-lg {
     border: 2px solid #fff;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
+.post-body-wrapper {
+  background-color: #ffefd5; /* نارنجی روشن پاستلی */
+  padding: 30px;
+  border-radius: 12px;
+  color: #111; /* متن مشکی */
+  font-size: 1.05rem;
+  line-height: 1.8;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  margin-bottom: 40px;
+}
