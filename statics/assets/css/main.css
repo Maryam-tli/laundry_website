@@ -17906,48 +17906,32 @@ textarea.form-control-lg {
 .post-nav-wrapper {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 20px;
+  background-color: #FFA500; /* نارنجی */
+  padding: 20px;
+  border-radius: 10px;
   flex-wrap: wrap;
-  margin-top: 2rem;
 }
 
 .post-nav-card {
-  background-color: #FFA500; /* نارنجی */
+  background-color: transparent;
   color: #111;
   text-decoration: none;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  padding: 10px 15px;
-  gap: 12px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  max-width: 48%;
-  flex: 1 1 300px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  flex: 1 1 45%;
+  text-align: center;
 }
 
 .post-nav-card:hover {
   background-color: #e63946; /* قرمز */
-  color: #fff;
-}
-
-.post-nav-thumbnail {
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
-  border-radius: 6px;
-  flex-shrink: 0;
-  border: 2px solid white;
+  color: white;
 }
 
 .post-nav-text {
-  font-weight: 600;
-  font-size: 0.95rem;
-  line-height: 1.4;
-}
-
-@media (max-width: 768px) {
-  .post-nav-card {
-    max-width: 100%;
-  }
+  font-size: 1rem;
+  line-height: 1.5;
 }
