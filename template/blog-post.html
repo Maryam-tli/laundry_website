@@ -223,22 +223,24 @@
 		</div>
 	</div>
 	<hr class="my-5">
-	<div class="nav-wrapper mt-4">
-    	{% if previous_post %}
-    	<a href="{% url 'post_detail' previous_post.slug %}" class="nav-post-box">
-        	<div class="post-body-wrapper mt-4">
-            	<p class="nav-post-title">← {{ previous_post.title|truncatewords:6 }}</p>
-        	</div>
-    	</a>
-    	{% endif %}
+	<div class="post-nav-wrapper">
+  	{% if previous_post %}
+  	<a href="{% url 'post_detail' previous_post.slug %}" class="post-nav-card">
+    	<img src="{{ previous_post.image.url }}" class="post-nav-thumbnail" alt="{{ previous_post.title }}">
+    	<div class="post-nav-text">
+      	← {{ previous_post.title|truncatewords:6 }}
+    	</div>
+  	</a>
+  	{% endif %}
 
-    	{% if next_post %}
-    	<a href="{% url 'post_detail' next_post.slug %}" class="nav-post-box ms-auto text-end justify-content-end">
-        	<div class="post-body-wrapper mt-4">
-            	<p class="nav-post-title">{{ next_post.title|truncatewords:6 }} →</p>
-        	</div>
-    	</a>
-    	{% endif %}
+  	{% if next_post %}
+  	<a href="{% url 'post_detail' next_post.slug %}" class="post-nav-card justify-content-end text-end">
+    	<div class="post-nav-text">
+      	{{ next_post.title|truncatewords:6 }} →
+    	</div>
+    	<img src="{{ next_post.image.url }}" class="post-nav-thumbnail" alt="{{ next_post.title }}">
+  	</a>
+  	{% endif %}
 	</div>
 {% endblock %}
 {% block diffrence_way %}
