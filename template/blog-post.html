@@ -223,23 +223,21 @@
 		</div>
 	</div>
 	<hr class="my-5">
+
 	<div class="post-nav-wrapper">
   	{% if previous_post %}
-  	<a href="{% url 'post_detail' previous_post.slug %}" class="post-nav-card">
-    	<div class="post-nav-text">
-      	← {{ previous_post.title|truncatewords:6 }}
-    	</div>
+  	<a href="{% url 'post_detail' previous_post.slug %}" class="post-nav-card text-start">
+    	← {{ previous_post.title|truncatewords:6 }}
   	</a>
   	{% endif %}
 
   	{% if next_post %}
   	<a href="{% url 'post_detail' next_post.slug %}" class="post-nav-card text-end">
-    	<div class="post-nav-text">
-      	{{ next_post.title|truncatewords:6 }} →
-    	</div>
+    	{{ next_post.title|truncatewords:6 }} →
   	</a>
   	{% endif %}
 	</div>
+
 
 {% endblock %}
 {% block diffrence_way %}
