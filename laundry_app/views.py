@@ -152,4 +152,4 @@ def load_data(request):
         return HttpResponse(f"❌ Error: {e}")
     
 def privacy_policy_view(request):
-    return render(request, 'privacy_policy.html')
+    return render(request, 'privacy-policy.html')
