@@ -216,19 +216,23 @@
     								{% endfor %}
 								</div>
 								<hr class="my-5">
-								<div class="d-flex justify-content-between align-items-center mt-4">
+								<div class="nav-wrapper mt-4">
     								{% if previous_post %}
-        								<a href="{% url 'post_detail' previous_post.slug %}" class="btn btn-outline-primary">
-            								← Previous: {{ previous_post.title|truncatewords:5 }}
-        								</a>
-    								{% else %}
-        								<span></span>
+    								<a href="{% url 'post_detail' previous_post.slug %}" class="nav-post-box">
+        								<img src="{{ previous_post.image.url }}" alt="{{ previous_post.title }}" class="nav-post-thumbnail">
+        								<div>
+            								<p class="nav-post-title">← {{ previous_post.title|truncatewords:6 }}</p>
+        								</div>
+    								</a>
     								{% endif %}
 
     								{% if next_post %}
-        								<a href="{% url 'post_detail' next_post.slug %}" class="btn btn-outline-primary ms-auto">
-            								Next: {{ next_post.title|truncatewords:5 }} →
-        								</a>
+    								<a href="{% url 'post_detail' next_post.slug %}" class="nav-post-box ms-auto text-end justify-content-end">
+        								<div>
+            								<p class="nav-post-title">{{ next_post.title|truncatewords:6 }} →</p>
+        								</div>
+        								<img src="{{ next_post.image.url }}" alt="{{ next_post.title }}" class="nav-post-thumbnail">
+    								</a>
     								{% endif %}
 								</div>
 							</div>
