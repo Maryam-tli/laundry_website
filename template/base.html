@@ -419,6 +419,40 @@
 	<script src="{% static 'assets/js/scripts.js' %}"></script>
 	<script src="{% static 'assets/php/contact/script.js' %}"></script>
 
+	<!-- Cookie Consent by Osano -->
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+	<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
+
+	<script>
+	window.addEventListener("load", function () {
+  	window.cookieconsent.initialise({
+    	palette: {
+      	popup: {
+        	background: "#004c70",  // آبی تیره
+        	text: "#ffffff"
+      	},
+      	button: {
+        	background: "#ff7a00",  // نارنجی
+        	text: "#ffffff"
+      	}
+    	},
+    	theme: "classic",
+    	position: "bottom",
+    	type: "opt-in", // کاربر باید خودش Accept کنه
+    	revokable: true,
+    	content: {
+      	message: "This website uses cookies to ensure you get the best experience on our website.",
+      	allow: "Accept All",
+      	deny: "Decline",
+      	dismiss: "Got it!",
+      	link: "Privacy Policy",
+      	href: "/privacy-policy",  // این لینک رو بعداً بساز یا به چیزی مثل /about تغییر بده
+    	}
+  	});
+	});
+	</script>
+
+
 
 
 
