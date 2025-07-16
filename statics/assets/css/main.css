@@ -17907,27 +17907,54 @@ textarea.form-control-lg {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #FFA500; /* نارنجی */
-  border-radius: 10px;
+  background: linear-gradient(to right, #ffaf40, #ffa500); /* نارنجی گرادیانی */
+  border-radius: 12px;
   padding: 20px;
-  flex-wrap: wrap;
   gap: 20px;
+  flex-wrap: wrap;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .post-nav-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex: 1 1 45%;
-  text-decoration: none;
-  color: #111;
-  font-weight: 600;
-  font-size: 1rem;
-  padding: 10px 15px;
+  background-color: white;
   border-radius: 8px;
-  background-color: transparent;
+  padding: 12px 18px;
+  color: #222;
+  font-weight: 600;
+  text-decoration: none;
   transition: all 0.3s ease;
-  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.07);
+  position: relative;
+  overflow: hidden;
 }
 
 .post-nav-card:hover {
-  background-color: #e63946;
-  color: white;
+  background-color: #e63946; /* قرمز شیک */
+  color: #fff;
+  transform: translateY(-3px);
 }
+
+.post-nav-text {
+  flex: 1;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.arrow {
+  font-size: 1.3rem;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+.previous .arrow {
+  color: #ff6600;
+}
+
+.next .arrow {
+  color: #ff6600;
+}
+
