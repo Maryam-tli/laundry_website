@@ -7,4 +7,5 @@ urlpatterns = [
     path('services/', services_view, name='services'),
     path('contact/', contact_view, name='contact'),
     path('load-data/', load_data, name='load_data'),
+    path('privacy-policy/', privacy_policy_view, name='privacy_policy'),
 ]
