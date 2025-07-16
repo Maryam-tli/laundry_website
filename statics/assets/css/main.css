@@ -17908,18 +17908,19 @@ textarea.form-control-lg {
   justify-content: space-between;
   gap: 20px;
   flex-wrap: wrap;
+  margin-top: 2rem;
 }
 
 .post-nav-card {
   background-color: #FFA500; /* نارنجی */
-  color: #111; /* متن مشکی */
+  color: #111;
   text-decoration: none;
   border-radius: 12px;
   display: flex;
   align-items: center;
   padding: 10px 15px;
-  gap: 15px;
-  transition: all 0.3s ease;
+  gap: 12px;
+  transition: background-color 0.3s ease, color 0.3s ease;
   max-width: 48%;
   flex: 1 1 300px;
   box-shadow: 0 0 10px rgba(0,0,0,0.08);
@@ -17927,19 +17928,26 @@ textarea.form-control-lg {
 
 .post-nav-card:hover {
   background-color: #e63946; /* قرمز */
-  color: white;
+  color: #fff;
 }
 
 .post-nav-thumbnail {
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 6px;
   flex-shrink: 0;
+  border: 2px solid white;
 }
 
 .post-nav-text {
   font-weight: 600;
-  font-size: 1rem;
-  line-height: 1.3;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .post-nav-card {
+    max-width: 100%;
+  }
 }
