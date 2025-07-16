@@ -215,6 +215,22 @@
         								</a>
     								{% endfor %}
 								</div>
+								<hr class="my-5">
+								<div class="d-flex justify-content-between align-items-center mt-4">
+    								{% if previous_post %}
+        								<a href="{% url 'post_detail' previous_post.slug %}" class="btn btn-outline-primary">
+            								← Previous: {{ previous_post.title|truncatewords:5 }}
+        								</a>
+    								{% else %}
+        								<span></span>
+    								{% endif %}
+
+    								{% if next_post %}
+        								<a href="{% url 'post_detail' next_post.slug %}" class="btn btn-outline-primary ms-auto">
+            								Next: {{ next_post.title|truncatewords:5 }} →
+        								</a>
+    								{% endif %}
+								</div>
 							</div>
 						</div>
 					</div>
