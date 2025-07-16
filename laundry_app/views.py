@@ -150,3 +150,6 @@ def load_data(request):
         return HttpResponse("✅ Data loaded successfully!")
     except Exception as e:
         return HttpResponse(f"❌ Error: {e}")
+    
+def privacy_policy_view(request):
+    return render(request, 'privacy_policy.html')
