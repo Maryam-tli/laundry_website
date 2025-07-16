@@ -238,7 +238,7 @@
         	<div>
             	<p class="nav-post-title">{{ next_post.title|truncatewords:6 }} →</p>
         	</div>
-        	<img src="{{ next_post.image.url }}" alt="{{ next_post.title }}" class="nav-post-thumbnail">
+        	<img src="{{ previous_post.image.url }}" class="small-thumbnail" alt="{{ previous_post.title }}">
     	</a>
     	{% endif %}
 	</div>
