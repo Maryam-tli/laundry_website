@@ -68,6 +68,15 @@ def post_detail(request, slug):
     categories = Category.objects.all()
     tags = Tag.objects.filter(taggit_taggeditem_items__isnull=False).distinct()
     latest_posts = Post.objects.filter(status=True).order_by('-published_date')[:3]
+    try:
+        previous_post = Post.objects.filter(id__lt=post.id, status=True).order_by('-id').first()
+    except Post.DoesNotExist:
+        previous_post = None
+
+    try:
+        next_post = Post.objects.filter(id__gt=post.id, status=True).order_by('id').first()
+    except Post.DoesNotExist:
+        next_post = None
     if 'schedule_submit' in request.POST:
         form = scheduleForm(request.POST)
         if form.is_valid():
@@ -104,6 +113,8 @@ def post_detail(request, slug):
         'latest_posts': latest_posts,
         'form': form,
         'form_2': form_2,
+        'previous_post': previous_post,
+        'next_post': next_post,
     }
     return render(request, 'blog-post.html', context)
 
