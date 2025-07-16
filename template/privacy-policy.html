@@ -1,15 +1,85 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<div class="container py-5">
-  <h1>Privacy Policy</h1>
-  <p>
-    We use cookies and similar technologies to enhance your experience on our site. 
-    By using this website, you agree to our use of cookies. Your information is safe 
-    and will never be shared without your consent.
-  </p>
-  <p>
-    For more details on how we collect, use, and protect your data, please contact us.
-  </p>
-</div>
+<!-- header body -->
+	<div class="overflow-hidden py-9 py-xl-10 position-relative">
+	   	<img src="{% static 'assets/img/bg/bg1.jpg' %}" class="position-absolute z-n1 top-0 h-100 w-100 object-fit-cover" alt="Meeting">
+
+	   	<div class="position-absolute z-n1 top-0 h-100 w-100 bg-dark"
+	        style="opacity: 0.85; mix-blend-mode: multiply; filter: contrast(1.15) brightness(0.85);">
+	    </div>
+
+	    <div class="position-absolute z-0 top-0 h-100 w-100">
+		    <div class="container h-100 d-flex align-items-center">
+                <div class="max-w-2xl mx-auto mx-xl-0 text-center text-xl-start">
+                    <h1 class="m-0 mt-7 text-white tracking-tight text-6xl fw-bold" data-aos-delay="0" data-aos="fade" data-aos-duration="3000">
+                        Privacy Policy
+                    </h1>
+                    <p class="m-0 mt-4 text-white text-lg leading-8" data-aos-delay="100" data-aos="fade" data-aos-duration="3000">
+                        We use cookies and similar technologies to enhance your experience on our website.
+                    </p>
+                </div>
+		    </div>
+	    </div>
+	</div>	
+  <div class="container py-5">
+    <p>
+      We use cookies and similar technologies to enhance your experience on our site. 
+      By using this website, you agree to our use of cookies. Your information is safe 
+      and will never be shared without your consent.
+    </p>
+    <p>
+      For more details on how we collect, use, and protect your data, please contact us.
+    </p>
+  </div>
+{% endblock %}
+
+{% block diffrence_way %}
+	<!-- Call to action -->
+	<div class="pb-9 pt-7">
+		<div class="container">
+			<div class="py-6 position-relative text-white rounded-3">
+				<img src="{% static 'assets/img/bg/bg10.jpg' %}" class="position-absolute z-n1 top-0 h-100 w-100 object-fit-cover rounded-3" loading="lazy" alt="Meeting">
+
+			   	<div class="position-absolute z-n1 top-0 h-100 w-100 bg-dark rounded-3"
+			        style="opacity: 0.85; mix-blend-mode: multiply; filter: contrast(1.15) brightness(0.85);">
+			    </div>
+
+				<div class="px-6">
+					<div class="mx-auto max-w-2xl">
+						<h2 class="m-0 tracking-tight text-4xl fw-bold text-center">
+							Reclaim Your Time. Experience Fresh.
+						</h2>
+						<p class="m-0 mt-4 text-lg leading-8 text-center">
+							Let us handle your laundry, so you can focus on what matters.
+						</p>
+						<div class="mt-4 pt-3 text-center">
+							<a href="javascript:;" class="btn btn-lg btn-primary text-white text-sm fw-semibold" data-bs-toggle="modal" data-bs-target="#pickupModal">
+    							Schedule Your Pickup
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <div class="modal fade" id="pickupModal" tabindex="-1" aria-labelledby="pickupModalLabel" aria-hidden="true">
+  		<div class="modal-dialog">
+    		<div class="modal-content">
+      		<div class="modal-header">
+        		<h5 class="modal-title" id="pickupModalLabel">Schedule Your Pickup</h5>
+        		<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      		</div>
+      		<div class="modal-body">
+        		<!-- اینجا فرم بگذار -->
+        		<form method="post" action="{% url 'services' %}">
+  					{% csrf_token %}
+  					{{ form.as_p }}
+  					<button type="submit" name="schedule_submit" class="btn btn-primary">Submit</button>
+				</form>
+
+      		</div>
+    		</div>
+  		</div>
+	</div>
 {% endblock %}
