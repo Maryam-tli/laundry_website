@@ -17907,31 +17907,27 @@ textarea.form-control-lg {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
   background-color: #FFA500; /* نارنجی */
-  padding: 20px;
   border-radius: 10px;
+  padding: 20px;
   flex-wrap: wrap;
+  gap: 20px;
 }
 
 .post-nav-card {
-  background-color: transparent;
-  color: #111;
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: all 0.3s ease;
   flex: 1 1 45%;
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-color: transparent;
+  transition: all 0.3s ease;
   text-align: center;
 }
 
 .post-nav-card:hover {
-  background-color: #e63946; /* قرمز */
+  background-color: #e63946;
   color: white;
-}
-
-.post-nav-text {
-  font-size: 1rem;
-  line-height: 1.5;
 }
