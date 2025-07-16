@@ -226,7 +226,6 @@
 	<div class="nav-wrapper mt-4">
     	{% if previous_post %}
     	<a href="{% url 'post_detail' previous_post.slug %}" class="nav-post-box">
-        	<img src="{{ previous_post.image.url }}" class="small-thumbnail" alt="{{ previous_post.title }}">
         	<div class="post-body-wrapper mt-4">
             	<p class="nav-post-title">← {{ previous_post.title|truncatewords:6 }}</p>
         	</div>
@@ -238,7 +237,6 @@
         	<div class="post-body-wrapper mt-4">
             	<p class="nav-post-title">{{ next_post.title|truncatewords:6 }} →</p>
         	</div>
-        	<img src="{{next_post.image.url }}" class="small-thumbnail" alt="{{ previous_post.title }}">
     	</a>
     	{% endif %}
 	</div>
