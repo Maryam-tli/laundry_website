@@ -225,18 +225,24 @@
 	<hr class="my-5">
 	<div class="floating-nav-container">
 
-  	{% if previous_post %}
-  	<a href="{% url 'post_detail' previous_post.slug %}" class="nav-card previous-card">
-    	<img src="{% static 'assets/img/bg/prev.png' %}" alt="Previous">
-    	<span class="nav-text">{{ previous_post.title|truncatewords:6 }}</span>
-  	</a>
+		<div>
+
+  		{% if previous_post %}
+  			<a href="{% url 'post_detail' previous_post.slug %}" class="nav-card previous-card">
+    			<img src="{% static 'assets/img/bg/prev.png' %}" alt="Previous">
+    			<span class="nav-text">{{ previous_post.title }}</span>
+  			</a>
+		</div>
   	{% endif %}
 
+  		<div>
+
   	{% if next_post %}
-  	<a href="{% url 'post_detail' next_post.slug %}" class="nav-card next-card">
-    	<span class="nav-text">{{ next_post.title|truncatewords:6 }}</span>
-    	<img src="{% static 'assets/img/bg/next.png' %}" alt="Next">
-  	</a>
+  			<a href="{% url 'post_detail' next_post.slug %}" class="nav-card next-card">
+    			<span class="nav-text">{{ next_post.title }}</span>
+    			<img src="{% static 'assets/img/bg/next.png' %}" alt="Next">
+  			</a>
+		</div>
   	{% endif %}
 
 	</div>
