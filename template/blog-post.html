@@ -234,10 +234,10 @@
     	{% endif %}
 
     	{% if next_post %}
-			<img src="{% static 'assets/img/bg/next.png' %}" alt="Next">
         	<a href="{% url 'post_detail' next_post.slug %}" class="btn btn-outline-primary ms-auto">
             	Next: {{ next_post.title }} →
         	</a>
+			<img src="{% static 'assets/img/bg/next.png' %}" alt="Next">
     	{% endif %}
 	</div>
 {% endblock %}
