@@ -17903,47 +17903,56 @@ textarea.form-control-lg {
   font-style: italic;
 }
 
-.nav-fixed-wrapper {
+.post-nav-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  gap: 60px; /* فاصله بین دو کارت */
   padding: 20px;
   box-sizing: border-box;
 }
 
-.prev-fixed,
-.next-fixed {
+.nav-card {
   display: flex;
   align-items: center;
-  background: #fff;
-  padding: 10px 16px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  background-color: #ffffff;
+  padding: 14px 20px;
+  border-radius: 12px;
   text-decoration: none;
   color: #1f1f1f;
   font-weight: 600;
-  max-width: 40%;
+  font-size: 1rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
   transition: all 0.3s ease;
+  max-width: 40%;
+  flex: 1;
 }
 
-.prev-fixed:hover,
-.next-fixed:hover {
+.nav-card:hover {
   background-color: #fff3d4;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
-.prev-fixed img,
-.next-fixed img {
+.nav-card img {
   width: 36px;
   height: 36px;
 }
 
-.prev-fixed span {
-  margin-left: 10px;
+.nav-text {
+  padding: 0 12px;
+  flex: 1;
+  text-align: center;
+  color: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.next-fixed span {
-  margin-right: 10px;
+.previous-card {
+  justify-content: flex-start;
+}
+
+.next-card {
+  justify-content: flex-end;
   text-align: right;
 }
