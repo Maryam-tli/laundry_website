@@ -17903,60 +17903,35 @@ textarea.form-control-lg {
   font-style: italic;
 }
 
-.post-nav-container {
+.fixed-nav-buttons {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  right: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: stretch;
-  gap: 30px;
-  margin: 60px 0;
-  padding: 20px 0;
-}
-
-.nav-card {
-  flex: 1;
-  display: flex;
   align-items: center;
-  justify-content: space-between;
-  background: #ffffff;
-  padding: 20px 25px;
-  border-radius: 12px;
-  text-decoration: none;
-  color: #1f1f1f;
-  font-weight: 600;
-  font-size: 1.1rem;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-  position: relative;
+  padding: 0 30px;
+  z-index: 1000;
+  pointer-events: none; /* تا فقط روی دکمه‌ها کلیک بشه */
 }
 
-.nav-card:hover {
-  background: linear-gradient(to right, #ffa500, #ff7300);
-  color: #fff;
-  transform: translateY(-3px);
-}
-
-.nav-icon {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #ff7300;
+.nav-btn {
+  pointer-events: auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  border-radius: 50%;
   transition: transform 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
-.nav-card:hover .nav-icon {
-  color: white;
-  transform: scale(1.3);
+.nav-btn:hover {
+  transform: scale(1.2);
+  background-color: #fff3d4;
 }
 
-.nav-title {
-  flex: 1;
-  text-align: center;
-  padding: 0 15px;
-}
-
-.prev-card {
-  text-align: left;
-}
-
-.next-card {
-  text-align: right;
+.nav-btn img {
+  width: 48px;
+  height: 48px;
 }
