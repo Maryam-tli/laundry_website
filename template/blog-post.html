@@ -223,27 +223,21 @@
 		</div>
 	</div>
 	<hr class="my-5">
-	<div class="floating-nav-container">
-
+	<div class="nav-fixed-wrapper">
   	{% if previous_post %}
-		<div>
-  			<a href="{% url 'post_detail' previous_post.slug %}" class="nav-card previous-card">
-    			<img src="{% static 'assets/img/bg/prev.png' %}" alt="Previous">
-    			<span class="nav-text">{{ previous_post.title }}</span>
-  			</a>
-		</div>
+  	<a href="{% url 'post_detail' previous_post.slug %}" class="prev-fixed">
+    	<img src="{% static 'assets/img/bg/prev.png' %}" alt="Previous">
+    	<span>{{ previous_post.title }}</span>
+  	</a>
   	{% endif %}
 
   	{% if next_post %}
-		<div>
-  			<a href="{% url 'post_detail' next_post.slug %}" class="nav-card next-card">
-    			<span class="nav-text">{{ next_post.title }}</span>
-    			<img src="{% static 'assets/img/bg/next.png' %}" alt="Next">
-  			</a>
-		</div>
+  	<a href="{% url 'post_detail' next_post.slug %}" class="next-fixed">
+    	<span>{{ next_post.title }}</span>
+    	<img src="{% static 'assets/img/bg/next.png' %}" alt="Next">
+  	</a>
   	{% endif %}
 	</div>
-
 
 
 {% endblock %}
