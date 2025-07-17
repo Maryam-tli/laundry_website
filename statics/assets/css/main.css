@@ -17906,15 +17906,20 @@ textarea.form-control-lg {
 .post-nav-wrapper {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 60px; /* فاصله بین دو کارت */
+  align-items: stretch;
+  gap: 60px;
   padding: 20px;
   box-sizing: border-box;
+}
+
+.previous-card, .next-card {
+  flex: 1;
 }
 
 .nav-card {
   display: flex;
   align-items: center;
+  justify-content: flex-start; /* برای قبلی */
   background-color: #ffffff;
   padding: 14px 20px;
   border-radius: 12px;
@@ -17924,36 +17929,14 @@ textarea.form-control-lg {
   font-size: 1rem;
   box-shadow: 0 6px 20px rgba(0,0,0,0.15);
   transition: all 0.3s ease;
-  max-width: 40%;
-  flex: 1;
+  height: 100%; /* اختیاری */
+}
+
+.next-card .nav-card {
+  justify-content: flex-end; /* برای بعدی */
 }
 
 .nav-card:hover {
   background-color: #fff3d4;
   transform: translateY(-3px);
-}
-
-.nav-card img {
-  width: 36px;
-  height: 36px;
-}
-
-.nav-text {
-  padding: 0 12px;
-  flex: 1;
-  text-align: center;
-  color: inherit;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.previous-card {
-  text-align: left;
-  justify-content: flex-start;
-}
-
-.next-card {
-  text-align: right;
-  justify-content: flex-end;
 }
