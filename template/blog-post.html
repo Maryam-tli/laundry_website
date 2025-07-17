@@ -226,24 +226,23 @@
 
 	<div class="post-nav-wrapper">
   	{% if previous_post %}
-		<div>
-  			<a href="{% url 'post_detail' previous_post.slug %}" class="nav-card previous-card">
-    			<img src="{% static 'assets/img/bg/prev.png' %}" alt="Previous">
-    			<span class="nav-text">{{ previous_post.title }}</span>
-  			</a>
-		</div>
+    	<div class="previous-card">
+      	<a href="{% url 'post_detail' previous_post.slug %}" class="nav-card">
+        	<img src="{% static 'assets/img/bg/prev.png' %}" alt="Previous">
+        	<span class="nav-text">{{ previous_post.title }}</span>
+      	</a>
+    	</div>
   	{% endif %}
 
   	{% if next_post %}
-		<div>
-  			<a href="{% url 'post_detail' next_post.slug %}" class="nav-card next-card">
-    			<span class="nav-text">{{ next_post.title }}</span>
-    			<img src="{% static 'assets/img/bg/next.png' %}" alt="Next">
-  			</a>
-		</div>
+    	<div class="next-card">
+      	<a href="{% url 'post_detail' next_post.slug %}" class="nav-card">
+        	<span class="nav-text">{{ next_post.title }}</span>
+        	<img src="{% static 'assets/img/bg/next.png' %}" alt="Next">
+      	</a>
+    	</div>
   	{% endif %}
 	</div>
-
 
 
 {% endblock %}
