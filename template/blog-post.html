@@ -227,18 +227,19 @@
 	<div class="post-nav-wrapper">
   	{% if previous_post %}
   	<a href="{% url 'post_detail' previous_post.slug %}" class="post-nav-card previous">
-    	<div class="arrow">←</div>
-    	<div class="post-nav-text">{{ previous_post.title|truncatewords:6 }}</div>
+    	<span class="arrow">←</span>
+    	<span class="post-nav-text">{{ previous_post.title|truncatewords:6 }}</span>
   	</a>
   	{% endif %}
 
   	{% if next_post %}
   	<a href="{% url 'post_detail' next_post.slug %}" class="post-nav-card next">
-    	<div class="post-nav-text">{{ next_post.title|truncatewords:6 }}</div>
-    	<div class="arrow">→</div>
+    	<span class="post-nav-text">{{ next_post.title|truncatewords:6 }}</span>
+    	<span class="arrow">→</span>
   	</a>
   	{% endif %}
 	</div>
+
 
 
 
