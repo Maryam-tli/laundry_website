@@ -223,18 +223,22 @@
 		</div>
 	</div>
 	<hr class="my-5">
-	<div class="fixed-nav-buttons">
+	<div class="floating-nav-container">
+
   	{% if previous_post %}
-  	<a href="{% url 'post_detail' previous_post.slug %}" class="nav-btn left-nav">
+  	<a href="{% url 'post_detail' previous_post.slug %}" class="nav-card previous-card">
     	<img src="{% static 'assets/img/bg/prev.png' %}" alt="Previous">
+    	<span class="nav-text">{{ previous_post.title|truncatewords:6 }}</span>
   	</a>
   	{% endif %}
 
   	{% if next_post %}
-  	<a href="{% url 'post_detail' next_post.slug %}" class="nav-btn right-nav">
+  	<a href="{% url 'post_detail' next_post.slug %}" class="nav-card next-card">
+    	<span class="nav-text">{{ next_post.title|truncatewords:6 }}</span>
     	<img src="{% static 'assets/img/bg/next.png' %}" alt="Next">
   	</a>
   	{% endif %}
+
 	</div>
 
 
