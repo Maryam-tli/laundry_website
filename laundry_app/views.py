@@ -183,4 +183,18 @@ def privacy_policy_view(request):
     return render(request, 'privacy-policy.html', {'form': form, 'form_2': form_2})
 
 def custom_404(request, exception):
-    return render(request, '404.html', status=404)
+    if 'subscribe_submit' in request.POST:
+        form_2 = subscriberForm(request.POST)
+        if form_2.is_valid():
+            subscriber = form_2.save()
+            send_mail(
+                'Welcome to Our Newsletter – You’re Subscribed!',
+                f'Dear User,Thank you for subscribing to our newsletter! We will keep you updated with our latest news and offers.{subscriber.subscribed_at}',
+                'maryamtli@zohomail.com',
+                [subscriber.email],
+                fail_silently=False,
+            )
+            return redirect('home')
+    else:
+        form_2 = subscriberForm()
+    return render(request, '404.html', {'form_2': form_2} ,status=404)
