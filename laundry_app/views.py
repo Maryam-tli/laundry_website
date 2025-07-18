@@ -181,3 +181,6 @@ def privacy_policy_view(request):
         form = scheduleForm()
         form_2 = subscriberForm()
     return render(request, 'privacy-policy.html', {'form': form, 'form_2': form_2})
+
+def custom_404(request, exception):
+    return render(request, '404.html', status=404)
