@@ -33,9 +33,9 @@
 		                <div class="col pt-5 pt-xl-4" data-aos-delay="0" data-aos="fade" data-aos-duration="3000">
 		                    <article class="d-flex max-w-xl mx-auto mx-xl-0 flex-column align-items-start justify-content-between">
 		                        <div class="position-relative w-100">
-		                            <a class="ratio" style="--bs-aspect-ratio: 66.66%;" href="{% url 'post_detail' item.slug %}">
-		                                <img src="{{ item.image.url }}" class="blog-image" alt="{{ item.title }}" loading="lazy">
-									</a>
+		                            <div class="ratio" style="--bs-aspect-ratio: 66.66%;">
+    									<img src="{{ item.image.url }}" class="blog-image rounded-3" alt="{{ item.title }}" loading="lazy">
+									</div>
 		                        </div>
 
 		                        <div class="mt-4 d-flex align-items-center column-gap-3 text-xs">
