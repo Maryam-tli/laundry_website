@@ -17948,3 +17948,18 @@ textarea.form-control-lg {
   display: block;
   border-radius: var(--bs-border-radius-lg);
 }
+
+.author-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+@media (max-width: 576px) {
+  .author-img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
