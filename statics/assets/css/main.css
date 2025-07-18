@@ -17919,7 +17919,7 @@ textarea.form-control-lg {
 .nav-card {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* برای قبلی */
+  justify-content: flex-start;
   background-color: #ffffff;
   padding: 14px 20px;
   border-radius: 12px;
@@ -17929,14 +17929,22 @@ textarea.form-control-lg {
   font-size: 1rem;
   box-shadow: 0 6px 20px rgba(0,0,0,0.15);
   transition: all 0.3s ease;
-  height: 100%; /* اختیاری */
+  height: 100%;
 }
 
 .next-card .nav-card {
-  justify-content: flex-end; /* برای بعدی */
+  justify-content: flex-end;
 }
 
 .nav-card:hover {
   background-color: #fff3d4;
   transform: translateY(-3px);
+}
+
+.blog-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--bs-border-radius-lg);
 }
