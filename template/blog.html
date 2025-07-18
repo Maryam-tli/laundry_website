@@ -272,20 +272,55 @@
 
 	<!-- Modal -->
 	<div class="modal fade" id="pickupModal" tabindex="-1" aria-labelledby="pickupModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="pickupModalLabel">Schedule Your Pickup</h5>
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<form method="post" action="{{ request.path }}">
-					{% csrf_token %}
-					{{ form.as_p }}
-					<button type="submit" name="schedule_submit" class="btn btn-primary">Submit</button>
+  		<div class="modal-dialog">
+    		<div class="modal-content">
+      		<div class="modal-header">
+        		<h5 class="modal-title" id="pickupModalLabel">Schedule Your Pickup</h5>
+        		<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      		</div>
+      		<div class="modal-body">
+				{% if form.errors %}
+  				<div class="alert alert-danger">
+    				Please correct the errors in the form.
+  				</div>
+				{% endif %}
+
+        		<form method="post" action="{% url 'services' %}">
+    				{% csrf_token %}
+
+    				<div class="mb-3">
+        				<label for="name" class="form-label">Full Name</label>
+        				<input type="text" name="name" class="form-control" placeholder="e.g., Maryam Tavakoli">
+    				</div>
+
+    				<div class="mb-3">
+        				<label for="date" class="form-label">Pickup Date</label>
+        				<input type="date" name="date" class="form-control">
+        				<small class="text-muted">Format: YYYY-MM-DD</small>
+    				</div>
+
+    				<div class="mb-3">
+        				<label for="time" class="form-label">Pickup Time</label>
+        				<input type="time" name="time" class="form-control">
+        				<small class="text-muted">Format: HH:MM (e.g., 14:30)</small>
+    				</div>
+
+					<div class="mb-3">
+        				<label for="email" class="form-label">Email Address</label>
+        				<input type="email" name="email" class="form-control" placeholder="e.g., maryam@example.com">
+    				</div>
+
+					<div class="mb-3">
+    					<label for="phone_number" class="form-label">Phone Number</label>
+    					<input type="tel" name="phone_number" class="form-control" placeholder="e.g., +1 234 567 8901">
+					</div>
+
+
+  					<button type="submit" name="schedule_submit" class="btn btn-primary">Submit</button>
 				</form>
-			</div>
-			</div>
-		</div>
+
+      		</div>
+    		</div>
+  		</div>
 	</div>
 {% endblock %}
