@@ -53,6 +53,7 @@ class Post(models.Model):
     updated_date = models.DateTimeField(auto_now=True)
     status = models.BooleanField(choices=STATUS_CHOICES, default=False)
     tags = TaggableManager()
+    counted_views = models.PositiveIntegerField(default=0)
 
     def save(self, *args, **kwargs):
         if not self.slug:
