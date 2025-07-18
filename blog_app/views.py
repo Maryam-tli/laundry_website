@@ -65,6 +65,9 @@ def blog_view(request, slug=None):
 
 def post_detail(request, slug):
     post = get_object_or_404(Post, slug=slug, status=True)
+    if request.method == "GET":
+        post.counted_views += 1
+        post.save(update_fields=['counted_views'])
     categories = Category.objects.all()
     tags = Tag.objects.filter(taggit_taggeditem_items__isnull=False).distinct()
     latest_posts = Post.objects.filter(status=True).order_by('-published_date')[:3]
