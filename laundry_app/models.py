@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 class schedule(models.Model):
+    full_name = models.CharField(max_length=100, blank=False, null=False)
     date = models.DateField()
     time = models.TimeField()
     email = models.EmailField()
