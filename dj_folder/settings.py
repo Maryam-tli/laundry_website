@@ -14,6 +14,9 @@ from pathlib import Path
 from decouple import config
 import dj_database_url
 import os
+import cloudinary
+import cloudinary_storage
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -60,6 +63,8 @@ INSTALLED_APPS = [
     'django.contrib.sites',  # Required for django-allauth
     'django.contrib.sitemaps',  # For sitemap functionality
     'robots',  # For robots.txt management
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 SITE_ID = 2  # Required for django-allauth
@@ -141,8 +146,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'  # Directory for static files
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'  # Directory for media files
+#MEDIA_URL = '/media/'
+#MEDIA_ROOT = BASE_DIR / 'media'  # Directory for media files
 STATICFILES_DIRS = [
     BASE_DIR / 'statics',  # Additional directory for static files
 ]
@@ -158,3 +163,8 @@ CSRF_TRUSTED_ORIGINS = ['https://laundrywebsite-production.up.railway.app']
 CSRF_COOKIE_SECURE = True  # Use secure cookies for CSRF protection
 ROBOTS_USE_HOST = False
 ROBOTS_USE_SITEMAP = False
+
+# Media settings with Cloudinary
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+# Cloudinary configuration
+CLOUDINARY_URL = config('CLOUDINARY_URL')
